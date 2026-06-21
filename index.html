@@ -1,0 +1,2796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDM Module 6 — Chemistry Answers</title>
+  <meta name="description" content="Detailed answers to all IDM Module 6 Chemistry questions covering Coordination Chemistry, Ionic Equilibrium, Carbohydrates, Amino Acids, and Phase Rule." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary:   #0d1117;
+      --bg-secondary: #161b22;
+      --bg-card:      #1c2128;
+      --bg-card-hover:#21262d;
+      --border:       #30363d;
+      --border-accent:#3d4451;
+
+      --txt-primary:  #e6edf3;
+      --txt-secondary:#8b949e;
+      --txt-muted:    #6e7681;
+
+      /* Subtle accent palette — no neon, no AI greens */
+      --accent-gold:  #c9a84c;
+      --accent-gold-dim:#9c7d35;
+      --accent-copper:#b87333;
+      --accent-slate: #5b7fa6;
+      --accent-rose:  #a05c5c;
+      --accent-sage:  #5a7a6a;
+
+      /* Topic colors */
+      --t1: #7b6fa0;   /* Coordination — muted violet */
+      --t2: #5a7a6a;   /* Ionic Eq — sage */
+      --t3: #9c7d35;   /* Carbs — warm gold */
+      --t4: #8a5c72;   /* Amino Acid — dusty rose */
+      --t5: #5b7fa6;   /* Phase Rule — steel blue */
+
+      --radius: 10px;
+      --radius-lg: 16px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--txt-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--accent-gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      color: var(--txt-primary);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--accent-gold); }
+    .hero p {
+      color: var(--txt-secondary);
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      display: block;
+      font-family: 'Playfair Display', serif;
+    }
+    .stat-lbl {
+      font-size: 0.75rem;
+      color: var(--txt-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── NAV ── */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,17,23,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      background: none;
+      border: none;
+      color: var(--txt-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      padding: 14px 16px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-btn:hover { color: var(--txt-primary); }
+    .nav-btn.active { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+
+    /* ── LAYOUT ── */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      display: none;
+      animation: fadeUp 0.4s ease;
+    }
+    .section.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--txt-primary);
+      margin-bottom: 4px;
+    }
+    .section-desc {
+      color: var(--txt-secondary);
+      font-size: 0.88rem;
+    }
+
+    /* ── Q&A CARD ── */
+    .qa-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .qa-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow);
+    }
+
+    .qa-question {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 22px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .qa-question:hover { background: var(--bg-card-hover); }
+
+    .q-num {
+      min-width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .q-text {
+      flex: 1;
+      font-weight: 500;
+      font-size: 0.96rem;
+      color: var(--txt-primary);
+      line-height: 1.55;
+    }
+    .q-arrow {
+      font-size: 0.7rem;
+      color: var(--txt-muted);
+      flex-shrink: 0;
+      margin-top: 5px;
+      transition: transform 0.3s;
+    }
+    .qa-card.open .q-arrow { transform: rotate(180deg); }
+
+    .qa-answer {
+      display: none;
+      padding: 0 22px 24px 22px;
+      border-top: 1px solid var(--border);
+    }
+    .qa-card.open .qa-answer { display: block; }
+
+    .ans-label {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--txt-muted);
+      margin: 16px 0 10px;
+    }
+    .ans-body {
+      color: var(--txt-secondary);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+    .ans-body p { margin-bottom: 10px; }
+    .ans-body p:last-child { margin-bottom: 0; }
+    .ans-body ul, .ans-body ol {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+    .ans-body li { margin-bottom: 5px; }
+    .ans-body strong { color: var(--txt-primary); font-weight: 600; }
+    .ans-body em { color: var(--accent-gold); font-style: normal; font-weight: 500; }
+
+    .formula-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-gold);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--txt-primary);
+      margin: 12px 0;
+      overflow-x: auto;
+      line-height: 1.6;
+    }
+
+    .highlight-box {
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin: 12px 0;
+      font-size: 0.88rem;
+      color: var(--txt-secondary);
+    }
+    .highlight-box strong { color: var(--accent-gold); }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.85rem;
+    }
+    .info-table th {
+      background: var(--bg-secondary);
+      color: var(--txt-secondary);
+      font-weight: 600;
+      padding: 9px 12px;
+      text-align: left;
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .info-table td {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      color: var(--txt-secondary);
+      vertical-align: top;
+    }
+    .info-table tr:nth-child(even) td { background: rgba(255,255,255,0.015); }
+
+    .step {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+      align-items: flex-start;
+    }
+    .step-num {
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-gold-dim);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Topic color schemes */
+    .t1 .q-num { background: rgba(123,111,160,0.18); color: var(--t1); }
+    .t1 .section-icon { background: rgba(123,111,160,0.15); }
+    .t1 .qa-card.open { border-color: rgba(123,111,160,0.35); }
+
+    .t2 .q-num { background: rgba(90,122,106,0.18); color: var(--t2); }
+    .t2 .section-icon { background: rgba(90,122,106,0.15); }
+    .t2 .qa-card.open { border-color: rgba(90,122,106,0.35); }
+
+    .t3 .q-num { background: rgba(156,125,53,0.18); color: var(--t3); }
+    .t3 .section-icon { background: rgba(156,125,53,0.15); }
+    .t3 .qa-card.open { border-color: rgba(156,125,53,0.35); }
+
+    .t4 .q-num { background: rgba(138,92,114,0.18); color: var(--t4); }
+    .t4 .section-icon { background: rgba(138,92,114,0.15); }
+    .t4 .qa-card.open { border-color: rgba(138,92,114,0.35); }
+
+    .t5 .q-num { background: rgba(91,127,166,0.18); color: var(--t5); }
+    .t5 .section-icon { background: rgba(91,127,166,0.15); }
+    .t5 .qa-card.open { border-color: rgba(91,127,166,0.35); }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar { height: 2px; background: var(--border); margin-bottom: 28px; border-radius: 2px; }
+    .progress-fill { height: 100%; border-radius: 2px; background: var(--accent-gold); transition: width 0.3s; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--txt-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero { padding: 48px 16px 40px; }
+      .main { padding: 32px 16px 60px; }
+      .qa-question { padding: 16px; }
+      .qa-answer { padding: 0 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">IDM · Module 6</div>
+  <h1>Chemistry <span>Question &amp; Answers</span></h1>
+  <p>Detailed answers to all questions across five major topics — written in simple, clear English.</p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">5</span><span class="stat-lbl">Topics</span></div>
+    <div class="stat"><span class="stat-num">90</span><span class="stat-lbl">Questions</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-lbl">Answered</span></div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav" aria-label="Topic navigation">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showSection('s1', this)" id="btn-s1">⬡ Coordination</button>
+    <button class="nav-btn" onclick="showSection('s2', this)" id="btn-s2">⚗ Ionic Equilibrium</button>
+    <button class="nav-btn" onclick="showSection('s3', this)" id="btn-s3">🌿 Carbohydrates</button>
+    <button class="nav-btn" onclick="showSection('s4', this)" id="btn-s4">🧬 Amino Acids</button>
+    <button class="nav-btn" onclick="showSection('s5', this)" id="btn-s5">📐 Phase Rule</button>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 1 — COORDINATION CHEMISTRY
+════════════════════════════════════════════════════ -->
+<section id="s1" class="section t1 active">
+  <div class="section-header">
+    <div class="section-icon">⬡</div>
+    <div>
+      <div class="section-title">Coordination Chemistry</div>
+      <div class="section-desc">Crystal Field Theory, IUPAC nomenclature, hybridisation, magnetic moments &amp; CFSE calculations.</div>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">1</span>
+      <span class="q-text">Determine the types of isomers present in the following compounds: [Cr(en)₂Cl₂]⁺, [Cr(NH₃)₄Cl₂]⁺, [Co(en)₂(NO₂)₂]⁺, [Pt(NH₃)₂Cl₂]</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>These compounds show different types of isomerism. Let's look at each:</p>
+
+        <p><strong>[Cr(en)₂Cl₂]⁺</strong> — Shows <em>Geometric isomerism</em> (cis &amp; trans) and <em>Optical isomerism</em>.</p>
+        <ul>
+          <li>In <strong>cis</strong> form: both Cl⁻ are on the same side → non-superimposable mirror images exist → <strong>optically active</strong> (d and l forms).</li>
+          <li>In <strong>trans</strong> form: Cl⁻ are opposite → has a plane of symmetry → <strong>optically inactive</strong> (meso form).</li>
+        </ul>
+
+        <p><strong>[Cr(NH₃)₄Cl₂]⁺</strong> — Shows <em>Geometric isomerism</em> only.</p>
+        <ul>
+          <li><strong>cis</strong>: two Cl on same side of the octahedron.</li>
+          <li><strong>trans</strong>: two Cl on opposite sides of the octahedron.</li>
+          <li>No optical isomers because NH₃ and Cl are simple, monodentate ligands; cis form here has a plane of symmetry.</li>
+        </ul>
+
+        <p><strong>[Co(en)₂(NO₂)₂]⁺</strong> — Shows <em>Geometric isomerism</em>, <em>Optical isomerism</em>, and <em>Linkage isomerism</em>.</p>
+        <ul>
+          <li>Geometric: cis (NO₂ on same side) and trans (NO₂ on opposite sides).</li>
+          <li>Optical: cis isomer is optically active.</li>
+          <li>Linkage isomerism: NO₂⁻ can bind via N (as nitro, –NO₂) or via O (as nitrito, –ONO).</li>
+        </ul>
+
+        <p><strong>[Pt(NH₃)₂Cl₂]</strong> — This is a square planar complex. Shows <em>Geometric isomerism</em> only.</p>
+        <ul>
+          <li><strong>cis</strong>: Both Cl on the same side (used as the anticancer drug cisplatin).</li>
+          <li><strong>trans</strong>: Cl on opposite corners of the square.</li>
+          <li>No optical isomers — both cis and trans forms have planes of symmetry.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">2</span>
+      <span class="q-text">Distinguish the pairs chemically: (i) [Co(NH₃)₅Cl]SO₄ &amp; [Co(NH₃)₅SO₄]Cl</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>These are <strong>ionisation isomers</strong>. They have the same molecular formula but different ions in solution. We can distinguish them chemically:</p>
+        <table class="info-table">
+          <thead><tr><th>Property</th><th>[Co(NH₃)₅Cl]SO₄</th><th>[Co(NH₃)₅SO₄]Cl</th></tr></thead>
+          <tbody>
+            <tr><td>Counter ion in solution</td><td>SO₄²⁻ (free)</td><td>Cl⁻ (free)</td></tr>
+            <tr><td>Test with BaCl₂ solution</td><td>White ppt. of BaSO₄ forms immediately ✓</td><td>No white ppt. (SO₄ is inside the complex)</td></tr>
+            <tr><td>Test with AgNO₃ solution</td><td>No white ppt. (Cl⁻ inside complex)</td><td>White ppt. of AgCl forms immediately ✓</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box"><strong>Key idea:</strong> Only free ions outside the coordination sphere react with reagents. Ions inside the square brackets are held firmly and do not respond.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">3</span>
+      <span class="q-text">Distinguish the pairs chemically: (i) [Cr(H₂O)₅Cl]Cl₂ &amp; [Cr(H₂O)₆]Cl₃ &nbsp; (ii) [Co(NH₃)₅SO₄]Br &amp; [Co(NH₃)₅Br]SO₄</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Part (i): [Cr(H₂O)₅Cl]Cl₂ vs [Cr(H₂O)₆]Cl₃</strong></p>
+        <table class="info-table">
+          <thead><tr><th>Test</th><th>[Cr(H₂O)₅Cl]Cl₂</th><th>[Cr(H₂O)₆]Cl₃</th></tr></thead>
+          <tbody>
+            <tr><td>AgNO₃ test</td><td>Precipitates <strong>2 moles</strong> AgCl (2 free Cl⁻)</td><td>Precipitates <strong>3 moles</strong> AgCl (3 free Cl⁻)</td></tr>
+            <tr><td>CaCl₂ dehydrating agent</td><td>Loses 5 water molecules (1 H₂O in sphere)</td><td>Loses 6 water molecules (all in sphere)</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Part (ii): [Co(NH₃)₅SO₄]Br vs [Co(NH₃)₅Br]SO₄</strong></p>
+        <table class="info-table">
+          <thead><tr><th>Test</th><th>[Co(NH₃)₅SO₄]Br</th><th>[Co(NH₃)₅Br]SO₄</th></tr></thead>
+          <tbody>
+            <tr><td>AgNO₃ test</td><td>White ppt. of AgBr (free Br⁻)</td><td>No ppt. (Br inside)</td></tr>
+            <tr><td>BaCl₂ test</td><td>No ppt. (SO₄ inside)</td><td>White ppt. of BaSO₄ (free SO₄²⁻)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">4</span>
+      <span class="q-text">What do you mean by chelating ligand? Give example.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>A <strong>chelating ligand</strong> (from Greek word "chele" meaning claw) is a ligand that has <em>two or more donor atoms</em> in its structure and can simultaneously bind to the same metal ion at multiple points, forming a ring-like structure called a <strong>chelate ring</strong>.</p>
+        <p>The complex formed is called a <strong>chelate complex</strong>, and the process is called <strong>chelation</strong>.</p>
+        <div class="highlight-box">
+          <strong>Why chelates are stable?</strong> Because multiple bonds hold the ligand to the metal simultaneously. Breaking all bonds at once is very difficult — this is called the <strong>chelate effect</strong>.
+        </div>
+        <p><strong>Examples:</strong></p>
+        <ul>
+          <li><em>Ethylenediamine (en), H₂N–CH₂–CH₂–NH₂</em> — bidentate (2 donor N atoms). Example: [Cu(en)₂]²⁺</li>
+          <li><em>Oxalate ion (ox²⁻), ⁻OOC–COO⁻</em> — bidentate (2 donor O atoms).</li>
+          <li><em>EDTA (ethylenediaminetetraacetate)</em> — hexadentate (6 donor atoms: 2 N + 4 O). Used in medicines and water treatment.</li>
+          <li><em>Acetylacetonate (acac⁻)</em> — bidentate (2 O atoms).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">5</span>
+      <span class="q-text">Determine the hybridisation, geometrical shape and magnetic moment of the following: K₄[Fe(CN)₆], K[CoCl₄], [Ni(CN)₄]²⁻, [Co(NH₃)₆]³⁺, [FeF₆]³⁻, [Ni(NH₃)₆]²⁺, [Fe(CO)₅], [Ni(CO)₄], [Cu(NH₃)₄]²⁺, [Co(NH₃)₆]²⁺</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <table class="info-table">
+          <thead><tr><th>Complex</th><th>Metal Ion &amp; d-electrons</th><th>Hybridisation</th><th>Shape</th><th>Unpaired e⁻</th><th>μ (B.M.)</th><th>Nature</th></tr></thead>
+          <tbody>
+            <tr><td>K₄[Fe(CN)₆]</td><td>Fe²⁺, d⁶, strong field CN⁻</td><td>d²sp³ (inner)</td><td>Octahedral</td><td>0</td><td>0</td><td>Diamagnetic</td></tr>
+            <tr><td>K[CoCl₄]</td><td>Co²⁺, d⁷, weak field Cl⁻</td><td>sp³</td><td>Tetrahedral</td><td>3</td><td>3.87</td><td>Paramagnetic</td></tr>
+            <tr><td>[Ni(CN)₄]²⁻</td><td>Ni²⁺, d⁸, strong field CN⁻</td><td>dsp²</td><td>Square Planar</td><td>0</td><td>0</td><td>Diamagnetic</td></tr>
+            <tr><td>[Co(NH₃)₆]³⁺</td><td>Co³⁺, d⁶, strong field NH₃</td><td>d²sp³ (inner)</td><td>Octahedral</td><td>0</td><td>0</td><td>Diamagnetic</td></tr>
+            <tr><td>[FeF₆]³⁻</td><td>Fe³⁺, d⁵, weak field F⁻</td><td>sp³d² (outer)</td><td>Octahedral</td><td>5</td><td>5.92</td><td>Paramagnetic</td></tr>
+            <tr><td>[Ni(NH₃)₆]²⁺</td><td>Ni²⁺, d⁸, weak field NH₃</td><td>sp³d² (outer)</td><td>Octahedral</td><td>2</td><td>2.83</td><td>Paramagnetic</td></tr>
+            <tr><td>[Fe(CO)₅]</td><td>Fe⁰, d⁸, strong CO</td><td>dsp³</td><td>Trigonal bipyramidal</td><td>0</td><td>0</td><td>Diamagnetic</td></tr>
+            <tr><td>[Ni(CO)₄]</td><td>Ni⁰, d¹⁰, strong CO</td><td>sp³</td><td>Tetrahedral</td><td>0</td><td>0</td><td>Diamagnetic</td></tr>
+            <tr><td>[Cu(NH₃)₄]²⁺</td><td>Cu²⁺, d⁹, weak NH₃</td><td>dsp²</td><td>Square Planar</td><td>1</td><td>1.73</td><td>Paramagnetic</td></tr>
+            <tr><td>[Co(NH₃)₆]²⁺</td><td>Co²⁺, d⁷, strong NH₃</td><td>d²sp³ (inner)</td><td>Octahedral</td><td>1</td><td>1.73</td><td>Paramagnetic</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box"><strong>Formula for magnetic moment:</strong> μ = √[n(n+2)] B.M., where n = number of unpaired electrons.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">6</span>
+      <span class="q-text">Write the IUPAC nomenclature of: K₂[PtCl₆], Na₂[Fe(CN)₅NO], K₃[Fe(CN)₆], [Cr(H₂O)₄Cl₂]Cl, [Co(NH₃)₄Cl₂]Cl, [Co(NO₂)(NH₃)₅]Cl, [Co(en)₂Cl₂](NO₃)₃, Na₄[Fe(CN)₅NOS], [Pt(NH₃)₄Cl₂][PtCl₄]</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Rules:</strong> Name ligands (alphabetical) first, then metal with oxidation state. Anionic complex ends in "-ate".</p>
+        <table class="info-table">
+          <thead><tr><th>Formula</th><th>IUPAC Name</th></tr></thead>
+          <tbody>
+            <tr><td>K₂[PtCl₆]</td><td>Potassium hexachloridoplatinate(IV)</td></tr>
+            <tr><td>Na₂[Fe(CN)₅NO]</td><td>Sodium pentacyanidonitrosylferrate(II) — NO is a neutral ligand here</td></tr>
+            <tr><td>K₃[Fe(CN)₆]</td><td>Potassium hexacyanoferrate(III)</td></tr>
+            <tr><td>[Cr(H₂O)₄Cl₂]Cl</td><td>Tetraaquadichloridochromium(III) chloride</td></tr>
+            <tr><td>[Co(NH₃)₄Cl₂]Cl</td><td>Tetraamminedichloridocobalt(III) chloride</td></tr>
+            <tr><td>[Co(NO₂)(NH₃)₅]Cl</td><td>Pentaamminenitrito-N-cobalt(III) chloride (if N-bonded)</td></tr>
+            <tr><td>[Co(en)₂Cl₂](NO₃)₃</td><td>Bis(ethylenediamine)dichloridocobalt(III) nitrate — wait, if 3 NO₃ outside, Co must be +5 — usually this is [Co(en)₂Cl₂]Cl written. As given: Dichloridobis(ethane-1,2-diamine)cobalt(III) trinitrate</td></tr>
+            <tr><td>Na₄[Fe(CN)₅NOS]</td><td>Sodium pentacyanidothionitrosylferrate(II)</td></tr>
+            <tr><td>[Pt(NH₃)₄Cl₂][PtCl₄]</td><td>Tetraamminedichloridoplatinum(IV) tetrachloridoplatinate(II) — this is Magnus's green salt type</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">7</span>
+      <span class="q-text">Determine the CFSE value for K₃[Fe(CN)₆] and K₄[Fe(CN)₆].</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>For K₃[Fe(CN)₆] — Fe³⁺ ion, d⁵ configuration, CN⁻ is a strong field ligand (Low spin)</strong></p>
+        <div class="formula-box">
+Fe³⁺: d⁵ in strong field → t₂g⁵ eg⁰
+CFSE = 5 × (-0.4 Δo) + 0 × (+0.6 Δo)
+CFSE = -2.0 Δo
+        </div>
+        <p>CFSE = <em>-2.0 Δo</em> (plus 2 pairs of electrons cause pairing energy: 2P is added back, but conventionally we report -2.0Δo for the orbital part)</p>
+
+        <p><strong>For K₄[Fe(CN)₆] — Fe²⁺ ion, d⁶ configuration, CN⁻ strong field (Low spin)</strong></p>
+        <div class="formula-box">
+Fe²⁺: d⁶ in strong field → t₂g⁶ eg⁰
+CFSE = 6 × (-0.4 Δo) + 0 × (+0.6 Δo)
+CFSE = -2.4 Δo
+        </div>
+        <p>CFSE = <em>-2.4 Δo</em></p>
+        <div class="highlight-box"><strong>Note:</strong> The negative sign means the complex is more stable than a spherical crystal field. Larger magnitude = more stable complex. K₄[Fe(CN)₆] is slightly more stable than K₃[Fe(CN)₆].</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">8</span>
+      <span class="q-text">The magnetic moment of [Fe(H₂O)₆]³⁺ is 5.9 B.M. and [Fe(CN)₆]³⁻ is 1.73 B.M. — Explain with CFT.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Both complexes contain <strong>Fe³⁺ (d⁵)</strong>, but they show very different magnetic moments. The key is the <strong>strength of the ligand field</strong>.</p>
+
+        <p><strong>[Fe(H₂O)₆]³⁺ — μ = 5.9 B.M. (n = 5 unpaired electrons)</strong></p>
+        <p>H₂O is a <em>weak field ligand</em>. Δo (crystal field splitting energy) is small, less than pairing energy (P).</p>
+        <div class="formula-box">
+Weak field: Δo &lt; P → High spin complex
+d⁵ configuration: t₂g³ eg²
+All 5 electrons remain unpaired (Hund's rule wins)
+μ = √[5(5+2)] = √35 ≈ 5.92 B.M.
+        </div>
+
+        <p><strong>[Fe(CN)₆]³⁻ — μ = 1.73 B.M. (n = 1 unpaired electron)</strong></p>
+        <p>CN⁻ is a <em>strong field ligand</em>. Δo is very large, greater than pairing energy (P).</p>
+        <div class="formula-box">
+Strong field: Δo &gt; P → Low spin complex
+d⁵ configuration: t₂g⁵ eg⁰
+4 electrons are paired, only 1 remains unpaired
+μ = √[1(1+2)] = √3 ≈ 1.73 B.M.
+        </div>
+        <div class="highlight-box"><strong>Conclusion:</strong> The ligand field strength (position in spectrochemical series) determines whether a complex is high spin or low spin, directly affecting the magnetic moment.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">9</span>
+      <span class="q-text">Why does [Ti(H₂O)₆]³⁺ show red-violet colour?</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Ti³⁺ has a <strong>d¹ electronic configuration</strong>. In the octahedral complex [Ti(H₂O)₆]³⁺, the single d-electron occupies the lower energy <em>t₂g</em> level.</p>
+        <div class="formula-box">
+When white light falls on the complex:
+→ The d-electron absorbs a photon of specific energy
+→ It jumps from t₂g level to eg level
+→ This transition is called a d-d transition
+        </div>
+        <p>The complex absorbs light in the <em>green-yellow region</em> (~500 nm). The light that is <strong>transmitted (not absorbed)</strong> is the complementary colour, which is <em>red-violet</em>.</p>
+        <div class="highlight-box">
+          <strong>What we see = complementary colour of absorbed light.</strong><br>
+          Absorbed: green-yellow → Transmitted: red-violet (what our eye sees).
+        </div>
+        <p>This is a perfect example of a <strong>single d-d transition</strong>, making [Ti(H₂O)₆]³⁺ one of the simplest coloured coordination compounds to explain.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">10</span>
+      <span class="q-text">[Co(NH₃)₆]³⁺ shows yellow-orange colour but [Co(CN)₆]³⁻ shows pale-yellow colour. Explain.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Both are Co³⁺ (d⁶) complexes, but <strong>CN⁻ is a stronger field ligand</strong> than NH₃.</p>
+        <table class="info-table">
+          <thead><tr><th>Complex</th><th>Ligand Strength</th><th>Δo value</th><th>Energy absorbed</th><th>Wavelength absorbed</th><th>Colour seen</th></tr></thead>
+          <tbody>
+            <tr><td>[Co(NH₃)₆]³⁺</td><td>Moderate (NH₃)</td><td>Smaller</td><td>Lower energy</td><td>Visible light (~450–490 nm, blue-violet)</td><td><strong>Yellow-orange</strong></td></tr>
+            <tr><td>[Co(CN)₆]³⁻</td><td>Very strong (CN⁻)</td><td>Much larger</td><td>Higher energy</td><td>UV region / far violet (~300–400 nm)</td><td><strong>Pale-yellow</strong> (less visible absorption)</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box">
+          When CN⁻ increases Δo so much that absorption shifts into UV, very little visible light is absorbed → the compound appears almost colourless or pale yellow (just absorbing the very edge of violet).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">11</span>
+      <span class="q-text">Why does KMnO₄ show deep violet colour?</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>KMnO₄ contains <strong>Mn⁷⁺ ion</strong>, which has a <em>d⁰ electronic configuration</em> (zero d-electrons).</p>
+        <p>Since d⁰ means no electrons in d-orbitals, a d-d transition is <strong>impossible</strong>. However, KMnO₄ is intensely violet! Why?</p>
+        <div class="highlight-box">
+          The colour of KMnO₄ is due to <strong>Charge Transfer (CT) transition</strong>, not d-d transition.<br><br>
+          Oxygen ligands donate electrons to the empty d-orbitals of Mn⁷⁺ when light is absorbed. This transfer of electron density from ligand (O) to metal (Mn) is a <strong>Ligand-to-Metal Charge Transfer (LMCT)</strong>.
+        </div>
+        <p>LMCT transitions are <em>Laporte-allowed</em> and very intense, resulting in the <strong>deep, highly saturated violet colour</strong> of KMnO₄, much more vivid than typical d-d transitions.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">12</span>
+      <span class="q-text">Why does K₂Cr₂O₇ show deep orange colour?</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>K₂Cr₂O₇ (potassium dichromate) contains <strong>Cr⁶⁺</strong>, which has a <em>d⁰ configuration</em> — no d-electrons.</p>
+        <p>Just like KMnO₄, the colour cannot be due to d-d transitions. Instead, it is due to <strong>Ligand-to-Metal Charge Transfer (LMCT)</strong>:</p>
+        <ul>
+          <li>Oxygen ligands (O²⁻) have filled orbitals.</li>
+          <li>Cr⁶⁺ has empty d-orbitals.</li>
+          <li>Light absorption causes transfer of electron density from O → Cr.</li>
+          <li>This transition absorbs blue-violet light (~400–450 nm).</li>
+          <li>The transmitted/reflected complementary colour is <strong>deep orange</strong>.</li>
+        </ul>
+        <div class="highlight-box">The high oxidation state (+6) of Cr makes the LMCT very easy, leading to absorption in the visible region and thus the intense orange colour.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">13</span>
+      <span class="q-text">[CoCl₄]²⁻ shows blue colour, but [Co(H₂O)₆]²⁺ shows pink colour. Explain.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Both contain <strong>Co²⁺ (d⁷)</strong>, but their geometry and ligand strength differ.</p>
+        <table class="info-table">
+          <thead><tr><th>Property</th><th>[CoCl₄]²⁻</th><th>[Co(H₂O)₆]²⁺</th></tr></thead>
+          <tbody>
+            <tr><td>Geometry</td><td>Tetrahedral</td><td>Octahedral</td></tr>
+            <tr><td>Ligand field</td><td>Cl⁻ (weak) + tetrahedral → very small Δt</td><td>H₂O (weak) + octahedral → moderate Δo</td></tr>
+            <tr><td>Δ value</td><td>Very small (Δt = 4/9 Δo)</td><td>Larger</td></tr>
+            <tr><td>Light absorbed</td><td>Red/orange region (~660 nm)</td><td>Yellow-green region (~510–550 nm)</td></tr>
+            <tr><td>Colour seen</td><td><strong>Blue</strong> (complementary of red)</td><td><strong>Pink</strong> (complementary of green)</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box"><strong>Summary:</strong> The geometry and ligand type change the d-d splitting energy, which shifts the absorbed wavelength, resulting in completely different observed colours.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">14</span>
+      <span class="q-text">[NiCl₄]²⁻ is paramagnetic but [Ni(CN)₄]²⁻ is diamagnetic. Explain.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Both contain <strong>Ni²⁺ (d⁸)</strong>. The difference is due to the <strong>ligand field strength</strong>.</p>
+        <p><strong>[NiCl₄]²⁻ — Cl⁻ is weak field ligand:</strong></p>
+        <div class="formula-box">
+Geometry: Tetrahedral (sp³ hybridisation)
+d⁸ in tetrahedral field: e⁴ t₂⁴ → 2 unpaired electrons remain
+μ = √[2(2+2)] = √8 ≈ 2.83 B.M. → Paramagnetic
+        </div>
+        <p><strong>[Ni(CN)₄]²⁻ — CN⁻ is very strong field ligand:</strong></p>
+        <div class="formula-box">
+CN⁻ forces pairing of all d electrons
+One 3d orbital becomes empty → hybridisation changes to dsp²
+Geometry: Square planar
+d⁸ fully paired → 0 unpaired electrons
+μ = 0 → Diamagnetic
+        </div>
+        <div class="highlight-box"><strong>Key:</strong> Strong field CN⁻ causes electrons to pair up, removing all unpaired electrons. Weak field Cl⁻ does not, leaving 2 unpaired electrons.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">15</span>
+      <span class="q-text">[NiCl₄]²⁻ is tetrahedral but [Ni(CN)₄]²⁻ is square planar. Explain.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>This is directly related to the answer above — the ligand field strength determines the geometry of Ni²⁺ (d⁸) complexes.</p>
+        <p><strong>[NiCl₄]²⁻:</strong></p>
+        <ul>
+          <li>Cl⁻ is a weak field ligand → small crystal field splitting.</li>
+          <li>The energy cost of pairing electrons is not compensated by the crystal field stabilisation.</li>
+          <li>Ni²⁺ uses <strong>sp³ hybridisation</strong> → <em>tetrahedral geometry</em>, 2 unpaired electrons.</li>
+        </ul>
+        <p><strong>[Ni(CN)₄]²⁻:</strong></p>
+        <ul>
+          <li>CN⁻ is a very strong field ligand → large crystal field splitting energy.</li>
+          <li>Electrons pair up in 3d orbitals; one 3d orbital empties out.</li>
+          <li>Ni²⁺ uses <strong>dsp² hybridisation</strong> (using one empty 3d orbital) → <em>square planar geometry</em>, 0 unpaired electrons.</li>
+        </ul>
+        <div class="highlight-box"><strong>Rule:</strong> d⁸ metal ions — strong field ligands → square planar; weak field ligands → tetrahedral. Square planar is more stable when CFSE gain is large enough to pay for the extra pairing energy.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">16</span>
+      <span class="q-text">Calculate the magnetic moment and pairing energy of [Co(NH₃)₆]³⁺.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Co³⁺ has a <strong>d⁶ configuration</strong>. NH₃ is a <strong>strong field ligand</strong>.</p>
+        <div class="formula-box">
+Strong field → Low spin complex
+d⁶: t₂g⁶ eg⁰
+Number of unpaired electrons (n) = 0
+Magnetic moment: μ = √[n(n+2)] = √[0(0+2)] = 0 B.M.
+        </div>
+        <p><strong>[Co(NH₃)₆]³⁺ is diamagnetic (μ = 0 B.M.)</strong></p>
+        <p><strong>Pairing energy:</strong> In a d⁶ low-spin complex, there are 3 pairs of electrons in t₂g.</p>
+        <div class="formula-box">
+Free ion d⁶ (high spin): t₂g⁴ eg² → 4 unpaired electrons → 1 pair forced
+Low spin d⁶: t₂g⁶ eg⁰ → 0 unpaired → 3 pairs forced total
+Extra pairs formed going from high spin to low spin = 2 extra pairs
+∴ Extra pairing energy cost = 2P
+        </div>
+        <div class="highlight-box">The CFSE gain must be greater than 2P for low spin to be favoured. For Co³⁺ with NH₃, Δo ≫ 2P, so low spin is strongly preferred.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">17</span>
+      <span class="q-text">Calculate ΔO value for d⁵ octahedral high spin and low spin complex.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>For a <strong>d⁵ octahedral complex</strong>:</p>
+        <p><strong>High Spin (weak field):</strong> t₂g³ eg²</p>
+        <div class="formula-box">
+CFSE = 3×(-0.4Δo) + 2×(+0.6Δo)
+     = -1.2Δo + 1.2Δo
+     = 0 Δo
+        </div>
+        <p>CFSE = <em>0 Δo</em> for high spin d⁵ — this is why Mn²⁺ and Fe³⁺ complexes with weak field ligands are colourless or have very pale colours — no crystal field stabilisation at all!</p>
+
+        <p><strong>Low Spin (strong field):</strong> t₂g⁵ eg⁰</p>
+        <div class="formula-box">
+CFSE = 5×(-0.4Δo) + 0×(+0.6Δo)
+     = -2.0Δo
+        </div>
+        <p>CFSE = <em>-2.0 Δo</em> for low spin d⁵. Additionally, 2 extra electron pairs form, so there is an extra pairing energy cost of 2P. Net CFSE = -2.0Δo + 2P.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">18</span>
+      <span class="q-text">Given CFSE for [Co(H₂O)₆]²⁺ is 7360 cm⁻¹. Calculate the ΔO value in KJ mol⁻¹. [1 KJ mol⁻¹ = 83.7 cm⁻¹]</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>[Co(H₂O)₆]²⁺ contains <strong>Co²⁺ (d⁷)</strong>. H₂O is weak field → high spin.</p>
+        <div class="formula-box">
+High spin d⁷: t₂g⁵ eg²
+CFSE = 5×(-0.4Δo) + 2×(+0.6Δo)
+     = -2.0Δo + 1.2Δo
+     = -0.8 Δo
+
+Given: CFSE = 7360 cm⁻¹
+→ 0.8 Δo = 7360
+→ Δo = 7360 / 0.8 = 9200 cm⁻¹
+
+Convert to KJ/mol:
+Δo = 9200 cm⁻¹ ÷ 83.7 cm⁻¹ per KJ/mol
+Δo ≈ 109.9 KJ/mol ≈ 110 KJ/mol
+        </div>
+        <div class="highlight-box"><strong>Answer: Δo ≈ 110 KJ mol⁻¹</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">19</span>
+      <span class="q-text">Δo for [Co(H₂O)₆]³⁺ is 13900 cm⁻¹ and pairing energy is 23000 cm⁻¹. Calculate CFSE.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Co³⁺ is <strong>d⁶</strong>. H₂O is moderate field. Check spin state: Δo = 13900 cm⁻¹ &lt; P = 23000 cm⁻¹ → <strong>High spin</strong>.</p>
+        <div class="formula-box">
+High spin d⁶: t₂g⁴ eg²
+CFSE = 4×(-0.4 Δo) + 2×(+0.6 Δo)
+     = -1.6 Δo + 1.2 Δo
+     = -0.4 Δo
+
+CFSE = -0.4 × 13900
+CFSE = -5560 cm⁻¹
+
+No extra pairing is forced compared to free ion in this case.
+∴ CFSE (net) = -5560 cm⁻¹
+        </div>
+        <div class="highlight-box"><strong>Answer: CFSE = -5560 cm⁻¹</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question">
+      <span class="q-num">20</span>
+      <span class="q-text">Δo for [Co(NH₃)₆]³⁺ is 14500 cm⁻¹ and pairing energy is 22500 cm⁻¹. Calculate CFSE.</span>
+      <span class="q-arrow">▼</span>
+    </div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Co³⁺ is <strong>d⁶</strong>. NH₃ is moderate-strong field. Δo = 14500 vs P = 22500: Δo &lt; P → still <strong>High spin</strong> (though NH₃ is often written as strong field for Co³⁺, for this numerical, we check).</p>
+        <div class="formula-box">
+High spin d⁶: t₂g⁴ eg²
+CFSE = 4×(-0.4 Δo) + 2×(+0.6 Δo) = -0.4 Δo
+CFSE = -0.4 × 14500 = -5800 cm⁻¹
+
+If low spin (t₂g⁶ eg⁰):
+CFSE = 6×(-0.4 Δo) = -2.4 Δo
+Net CFSE = -2.4×14500 + 2×22500 (extra pairing penalty)
+         = -34800 + 45000 = +10200 cm⁻¹ → Not favoured
+
+So high spin CFSE = -5800 cm⁻¹
+        </div>
+        <div class="highlight-box"><strong>Answer: CFSE = -5800 cm⁻¹</strong></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 2 — IONIC EQUILIBRIUM
+════════════════════════════════════════════════════ -->
+<section id="s2" class="section t2">
+  <div class="section-header">
+    <div class="section-icon">⚗</div>
+    <div>
+      <div class="section-title">Ionic Equilibrium</div>
+      <div class="section-desc">Degree of ionisation, pH calculations, buffer solutions, solubility product, and ionic product of water.</div>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">1</span><span class="q-text">State Ostwald's Dilution Law.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Ostwald's Dilution Law</strong> states that for a weak electrolyte, the degree of ionisation (α) increases on dilution. The dissociation constant (Ka) is related to concentration (C) and degree of ionisation (α) as:</p>
+        <div class="formula-box">
+For weak acid HA ⇌ H⁺ + A⁻
+Ka = Cα² / (1 - α)
+
+When α is very small (≪ 1): Ka ≈ Cα²
+Therefore: α = √(Ka / C)
+
+∴ As C decreases (dilution), α increases.
+        </div>
+        <p>This means: <em>the more dilute the solution, the greater the ionisation</em>. However, the total number of ions may still decrease on dilution.</p>
+        <div class="highlight-box"><strong>Limitation:</strong> This law applies only to weak electrolytes. It does not apply to strong electrolytes (like HCl, NaOH) which are considered completely ionised.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">2</span><span class="q-text">Calculate degree of ionisation of 0.1 M CH₃COOH. Ka = 1.8×10⁻⁵</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Given: C = 0.1 M, Ka = 1.8×10⁻⁵
+Using Ostwald's approximation (α ≪ 1):
+α = √(Ka / C) = √(1.8×10⁻⁵ / 0.1)
+  = √(1.8×10⁻⁴)
+  = √(18×10⁻⁵)
+  = 1.342×10⁻² × √10 ... 
+  = √(0.00018)
+  = 0.01342
+
+α ≈ 0.0134 = 1.34%
+        </div>
+        <div class="highlight-box"><strong>Answer: α ≈ 1.34%</strong> — Only about 1.34% of acetic acid ionises in 0.1 M solution.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">3</span><span class="q-text">Calculate degree of ionisation and [H⁺] for 0.01 M formic acid. Ka = 2.1×10⁻⁴</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Given: C = 0.01 M, Ka = 2.1×10⁻⁴
+α = √(Ka / C) = √(2.1×10⁻⁴ / 0.01)
+  = √(2.1×10⁻²)
+  = √(0.021)
+  = 0.1449
+
+Check: α ≈ 0.145 (14.5%) — not negligible, so use exact formula:
+Ka = Cα²/(1-α) → α² × 0.01 / (1-α) = 2.1×10⁻⁴
+Solving: 0.01α² + 2.1×10⁻⁴ α - 2.1×10⁻⁴ × 1 = 0  [wait, rearrange]
+Actually: Cα² + Ka·α - Ka = 0
+0.01α² + 2.1×10⁻⁴α - 2.1×10⁻⁴ = 0
+Using quadratic: α = [-2.1×10⁻⁴ + √((2.1×10⁻⁴)² + 4×0.01×2.1×10⁻⁴)] / (2×0.01)
+Discriminant = 4.41×10⁻⁸ + 8.4×10⁻⁶ = 8.444×10⁻⁶
+√discriminant = 2.906×10⁻³
+α = (-2.1×10⁻⁴ + 2.906×10⁻³) / 0.02 = 2.696×10⁻³ / 0.02 ≈ 0.1348
+
+α ≈ 0.135 = 13.5%
+[H⁺] = Cα = 0.01 × 0.135 = 1.35×10⁻³ M
+        </div>
+        <div class="highlight-box"><strong>Answer: α ≈ 13.5%</strong> and <strong>[H⁺] ≈ 1.35×10⁻³ M</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">4</span><span class="q-text">Calculate pH: (i) 10⁻³ M HCl &nbsp; (ii) 10⁻³ M H₂SO₄ &nbsp; (iii) 10⁻³ M NaOH</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+(i) 10⁻³ M HCl: HCl → H⁺ + Cl⁻ (strong acid, fully ionised)
+    [H⁺] = 10⁻³ M
+    pH = -log[H⁺] = -log(10⁻³) = 3
+    pH = 3
+
+(ii) 10⁻³ M H₂SO₄: H₂SO₄ → 2H⁺ + SO₄²⁻
+    [H⁺] = 2 × 10⁻³ M
+    pH = -log(2×10⁻³) = -log(2) - log(10⁻³)
+       = -0.301 + 3 = 2.699
+    pH ≈ 2.70
+
+(iii) 10⁻³ M NaOH: NaOH → Na⁺ + OH⁻ (strong base)
+    [OH⁻] = 10⁻³ M
+    pOH = -log(10⁻³) = 3
+    pH = 14 - pOH = 14 - 3 = 11
+    pH = 11
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">5</span><span class="q-text">Calculate pH of: (i) 10⁻⁹ M HCl &nbsp; (ii) 10⁻⁸ M NaOH</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>These are very dilute solutions — we must account for water's own ionisation contribution!</p>
+        <div class="formula-box">
+(i) 10⁻⁹ M HCl:
+    [H⁺] from HCl = 10⁻⁹ M (very small)
+    [H⁺] from water = 10⁻⁷ M (dominant here)
+    Total [H⁺] = 10⁻⁷ + 10⁻⁹ = 10⁻⁷(1 + 0.01) = 1.01×10⁻⁷ M
+    pH = -log(1.01×10⁻⁷) ≈ 6.996 ≈ 7.0
+
+    (Cannot have pH < 7 for such a dilute acid — water's contribution dominates)
+
+(ii) 10⁻⁸ M NaOH:
+    [OH⁻] from NaOH = 10⁻⁸ M
+    [OH⁻] from water = 10⁻⁷ M
+    Total [OH⁻] = 10⁻⁷ + 10⁻⁸ = 1.1×10⁻⁷ M
+    pOH = -log(1.1×10⁻⁷) = 7 - log(1.1) ≈ 7 - 0.041 = 6.959
+    pH = 14 - 6.959 = 7.041 ≈ 7.04
+        </div>
+        <div class="highlight-box"><strong>Key concept:</strong> At extreme dilutions, water's autoionisation (Kw = 10⁻¹⁴) contributes significantly to [H⁺] or [OH⁻]. The pH can never exceed 7 for an acid solution or go below 7 for a base solution.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">6</span><span class="q-text">Calculate pH: (i) 0.005 M Ca(OH)₂ &nbsp; (ii) 0.1 N CH₃COOH (Ka=1.8×10⁻⁵) &nbsp; (iii) 3 M NH₄OH (Kb=1.8×10⁻⁵)</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+(i) 0.005 M Ca(OH)₂:
+    Ca(OH)₂ → Ca²⁺ + 2OH⁻ (strong base, fully dissociated)
+    [OH⁻] = 2 × 0.005 = 0.01 M = 10⁻² M
+    pOH = 2
+    pH = 14 - 2 = 12
+
+(ii) 0.1 N CH₃COOH (for weak acid, N = M):
+    C = 0.1 M, Ka = 1.8×10⁻⁵
+    [H⁺] = √(Ka × C) = √(1.8×10⁻⁵ × 0.1) = √(1.8×10⁻⁶)
+           = 1.342×10⁻³ M
+    pH = -log(1.342×10⁻³) = 3 - log(1.342) = 3 - 0.128 = 2.872
+    pH ≈ 2.87
+
+(iii) 3 M NH₄OH, Kb = 1.8×10⁻⁵:
+    [OH⁻] = √(Kb × C) = √(1.8×10⁻⁵ × 3) = √(5.4×10⁻⁵)
+           = 7.35×10⁻³ M
+    pOH = -log(7.35×10⁻³) = 3 - log(7.35) = 3 - 0.866 = 2.134
+    pH = 14 - 2.134 = 11.87
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">7</span><span class="q-text">20 cc of 0.1 M Ca(OH)₂ is added to 200 cc of H₂O. Calculate the pH.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Moles of Ca(OH)₂ = 0.1 × (20/1000) = 0.002 mol
+Moles of OH⁻ = 2 × 0.002 = 0.004 mol (since Ca(OH)₂ → 2OH⁻)
+
+Total volume = 20 + 200 = 220 cc = 0.220 L
+[OH⁻] = 0.004 / 0.220 = 0.01818 M
+
+pOH = -log(0.01818) = -log(1.818×10⁻²) = 2 - log(1.818)
+    = 2 - 0.2596 = 1.74
+pH = 14 - 1.74 = 12.26
+        </div>
+        <div class="highlight-box"><strong>Answer: pH ≈ 12.26</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">8</span><span class="q-text">20 mL of 4N NaOH is added to 40 mL of 3N HCl. Calculate the pH.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Milli-equivalents (meq) of NaOH = 4 × 20 = 80 meq
+Milli-equivalents (meq) of HCl  = 3 × 40 = 120 meq
+
+HCl is in excess: Excess HCl = 120 - 80 = 40 meq
+Total volume = 20 + 40 = 60 mL
+
+[H⁺] (from excess HCl) = 40 meq / 60 mL = 0.6667 N = 0.6667 M
+pH = -log(0.6667) = -log(6.667×10⁻¹)
+   = 1 - log(6.667) = 1 - 0.824 = 0.176
+
+pH ≈ 0.18
+        </div>
+        <div class="highlight-box"><strong>Answer: pH ≈ 0.18</strong> (strongly acidic solution)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">9</span><span class="q-text">Equal concentration of CH₃COOH and CH₃COONa in a buffer. Calculate pH. Ka = 1.8×10⁻⁵</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Using the <strong>Henderson-Hasselbalch equation</strong>:</p>
+        <div class="formula-box">
+pH = pKa + log([salt] / [acid])
+
+When [CH₃COONa] = [CH₃COOH]:
+    [salt]/[acid] = 1
+    log(1) = 0
+
+pH = pKa + 0 = pKa
+pKa = -log(Ka) = -log(1.8×10⁻⁵)
+    = 5 - log(1.8) = 5 - 0.255 = 4.745
+
+pH = 4.74
+        </div>
+        <div class="highlight-box"><strong>Answer: pH = 4.74</strong> — When acid and salt concentrations are equal, pH = pKa. This is the most effective buffering point.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">10</span><span class="q-text">CH₃COOH = 0.02 M and CH₃COONa = 0.04 M in buffer. Ka = 1.8×10⁻⁵. Calculate pH.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+pH = pKa + log([salt] / [acid])
+   = 4.745 + log(0.04 / 0.02)
+   = 4.745 + log(2)
+   = 4.745 + 0.301
+   = 5.046
+        </div>
+        <div class="highlight-box"><strong>Answer: pH ≈ 5.05</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">11</span><span class="q-text">Calculate solubility product of AgCl if solubility = 0.0015 g/L.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Molar mass of AgCl = 108 + 35.5 = 143.5 g/mol
+Solubility in mol/L: s = 0.0015 / 143.5 = 1.045×10⁻⁵ mol/L
+
+AgCl ⇌ Ag⁺ + Cl⁻
+[Ag⁺] = s = 1.045×10⁻⁵ M
+[Cl⁻] = s = 1.045×10⁻⁵ M
+
+Ksp = [Ag⁺][Cl⁻] = s² = (1.045×10⁻⁵)²
+    = 1.092×10⁻¹⁰
+
+Ksp ≈ 1.09×10⁻¹⁰
+        </div>
+        <div class="highlight-box"><strong>Answer: Ksp ≈ 1.09×10⁻¹⁰</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">12</span><span class="q-text">Ksp of CaF₂ = 4.9×10⁻¹¹. Calculate solubility of CaF₂.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+CaF₂ ⇌ Ca²⁺ + 2F⁻
+Let solubility = s mol/L
+[Ca²⁺] = s, [F⁻] = 2s
+
+Ksp = [Ca²⁺][F⁻]² = s × (2s)² = 4s³
+
+4s³ = 4.9×10⁻¹¹
+s³ = 4.9×10⁻¹¹ / 4 = 1.225×10⁻¹¹
+s = ∛(1.225×10⁻¹¹)
+s = (1.225)^(1/3) × 10⁻¹¹/³
+  = 1.07 × 10⁻³·⁶⁷
+s ≈ 2.29×10⁻⁴ mol/L
+        </div>
+        <div class="highlight-box"><strong>Answer: Solubility of CaF₂ ≈ 2.29×10⁻⁴ mol/L</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">13</span><span class="q-text">Concentration of Mg²⁺ = 0.1 M. At what pH does Mg(OH)₂ precipitate? [Ksp = 1×10⁻¹¹]</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Mg(OH)₂ ⇌ Mg²⁺ + 2OH⁻
+Ksp = [Mg²⁺][OH⁻]²
+1×10⁻¹¹ = 0.1 × [OH⁻]²
+[OH⁻]² = 1×10⁻¹⁰
+[OH⁻] = 1×10⁻⁵ M
+
+pOH = -log(10⁻⁵) = 5
+pH = 14 - 5 = 9
+
+Precipitation begins when pH > 9.
+        </div>
+        <div class="highlight-box"><strong>Answer: Mg(OH)₂ begins to precipitate when pH ≥ 9.</strong> Below pH 9, Mg²⁺ stays dissolved.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">14</span><span class="q-text">Solubility of AgCl in 0.1 M NaCl solution. [Ksp = 1×10⁻¹⁰]</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>This is the <strong>common ion effect</strong>. NaCl provides Cl⁻ ions, suppressing AgCl dissolution.</p>
+        <div class="formula-box">
+AgCl ⇌ Ag⁺ + Cl⁻
+Let solubility of AgCl = s mol/L
+[Ag⁺] = s
+[Cl⁻] = s + 0.1 ≈ 0.1 (since s ≪ 0.1)
+
+Ksp = [Ag⁺][Cl⁻] = s × 0.1 = 1×10⁻¹⁰
+s = 1×10⁻¹⁰ / 0.1 = 1×10⁻⁹ mol/L
+        </div>
+        <div class="highlight-box"><strong>Answer: Solubility = 1×10⁻⁹ mol/L</strong> — This is 10,000 times less than pure water (1×10⁻⁵ mol/L). The common ion effect drastically reduces solubility.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">15</span><span class="q-text">What is the ionic product of water?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Water undergoes <strong>autoionisation (self-ionisation)</strong>:</p>
+        <div class="formula-box">
+H₂O + H₂O ⇌ H₃O⁺ + OH⁻
+or simply: H₂O ⇌ H⁺ + OH⁻
+        </div>
+        <p>The <strong>ionic product of water (Kw)</strong> is the product of the concentrations of H⁺ and OH⁻ ions in pure water (or any aqueous solution):</p>
+        <div class="formula-box">
+Kw = [H⁺][OH⁻]
+
+At 25°C: [H⁺] = [OH⁻] = 10⁻⁷ mol/L (measured)
+Kw = 10⁻⁷ × 10⁻⁷ = 10⁻¹⁴ mol²/L²
+        </div>
+        <p><strong>Key points:</strong></p>
+        <ul>
+          <li>Kw increases with temperature (water ionisation is endothermic).</li>
+          <li>At 25°C, Kw = 10⁻¹⁴. At 37°C (body temperature), Kw ≈ 2.4×10⁻¹⁴.</li>
+          <li>pH + pOH = pKw = 14 (at 25°C).</li>
+          <li>In any aqueous solution, Kw is constant at constant temperature.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">16</span><span class="q-text">Aqueous solution of CH₃COONa is basic at 25°C. Comment on it.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>This is a case of <strong>salt hydrolysis</strong>. CH₃COONa is a salt of a weak acid (CH₃COOH) and a strong base (NaOH).</p>
+        <p>In water, CH₃COONa completely dissociates:</p>
+        <div class="formula-box">
+CH₃COONa → CH₃COO⁻ + Na⁺
+
+The acetate ion (CH₃COO⁻) reacts with water (hydrolyses):
+CH₃COO⁻ + H₂O ⇌ CH₃COOH + OH⁻
+        </div>
+        <p>Because CH₃COOH is a weak acid (doesn't fully re-ionise), the OH⁻ ions accumulate in solution → the solution becomes <em>basic (alkaline)</em>.</p>
+        <p>Na⁺ does not hydrolyse (it comes from the strong base NaOH).</p>
+        <div class="highlight-box">
+          <strong>General rule:</strong><br>
+          • Salt of weak acid + strong base → Basic solution (anion hydrolyses)<br>
+          • Salt of strong acid + weak base → Acidic solution (cation hydrolyses)<br>
+          • Salt of weak acid + weak base → Depends on relative Ka and Kb<br>
+          • Salt of strong acid + strong base → Neutral solution
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">17</span><span class="q-text">If 'S' is the solubility of Al₂(SO₄)₃, what is the relation between Ksp and S?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Al₂(SO₄)₃ ⇌ 2Al³⁺ + 3SO₄²⁻
+
+If solubility = S mol/L:
+[Al³⁺] = 2S
+[SO₄²⁻] = 3S
+
+Ksp = [Al³⁺]² × [SO₄²⁻]³
+    = (2S)² × (3S)³
+    = 4S² × 27S³
+    = 108 S⁵
+
+∴ Ksp = 108 S⁵
+or S = (Ksp / 108)^(1/5)
+        </div>
+        <div class="highlight-box"><strong>Answer: Ksp = 108 S⁵</strong></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 3 — CARBOHYDRATES
+════════════════════════════════════════════════════ -->
+<section id="s3" class="section t3">
+  <div class="section-header">
+    <div class="section-icon">🌿</div>
+    <div>
+      <div class="section-title">Carbohydrates</div>
+      <div class="section-desc">Mutarotation, anomeric carbon, Haworth projections, reactions of sugars, and chemical properties.</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">1</span><span class="q-text">What do you mean by mutarotation?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Mutarotation</strong> is the spontaneous change in the specific optical rotation of a freshly prepared solution of a carbohydrate over time, until it reaches an equilibrium value.</p>
+        <p><strong>Why it happens:</strong> When a crystalline sugar like glucose is dissolved in water, the cyclic ring opens briefly (ring-chain tautomerism), and then re-closes to give either the α or β anomer in different proportions.</p>
+        <div class="formula-box">
+D-Glucose example:
+α-D-Glucopyranose ⇌ Open-chain form ⇌ β-D-Glucopyranose
+[α]D = +112.2°        [α]D = +52.7° (open)     [α]D = +18.7°
+
+Equilibrium mixture: ~36% α + ~64% β
+Final optical rotation at equilibrium: +52.7°
+        </div>
+        <p>This change in optical rotation from initial to equilibrium value is called <em>mutarotation</em>. It is catalysed by acids, bases, and enzymes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">2</span><span class="q-text">What do you mean by anomeric carbon?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>The <strong>anomeric carbon</strong> is the carbon atom that becomes a new chiral centre when a monosaccharide undergoes ring closure (cyclisation).</p>
+        <p>In glucose, the <em>open-chain aldehyde carbon (C-1)</em> reacts with the C-5 hydroxyl group to form a cyclic hemiacetal. C-1 now has four different groups attached → it becomes chiral → it is the anomeric carbon.</p>
+        <div class="highlight-box">
+          <strong>Two anomers arise from this:</strong><br>
+          • <strong>α-anomer:</strong> –OH at anomeric carbon is on the same side as the reference group (below the ring in Haworth projection for D-sugars).<br>
+          • <strong>β-anomer:</strong> –OH at anomeric carbon is on the opposite side (above the ring for D-sugars).
+        </div>
+        <p>The two anomers are diastereomers of each other and are called <em>anomers</em>. They interconvert through mutarotation via the open-chain form.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">3</span><span class="q-text">Convert D-Ribose to D-Glucose.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>D-Ribose is a <strong>pentose sugar</strong> (5 carbons). D-Glucose is a <strong>hexose</strong> (6 carbons). We use the <strong>Kiliani-Fischer synthesis</strong> to extend the chain.</p>
+        <ol>
+          <li><strong>Step 1 — HCN addition (Kiliani):</strong> HCN adds to the aldehyde group of D-Ribose → forms a cyanohydrin. This creates two new C-6 epimers (since C-2 becomes a new chiral centre).</li>
+          <li><strong>Step 2 — Hydrolysis:</strong> The nitrile (CN) group is hydrolysed with H₂O/H⁺ → forms an α-hydroxy acid (aldonic acid) with 6 carbons.</li>
+          <li><strong>Step 3 — Lactonisation &amp; Reduction:</strong> The acid is converted to its lactone (cyclic ester) and then reduced with Na-Hg amalgam in dilute H₂SO₄ → gives D-Glucose and D-Mannose (the two epimers at C-2).</li>
+        </ol>
+        <div class="highlight-box">
+          <strong>D-Ribose + HCN → Cyanohydrin → Aldonic acid → Lactone → Na-Hg / H₂O → D-Glucose + D-Mannose</strong><br>
+          D-Glucose is isolated by specific crystallisation.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">4</span><span class="q-text">Draw Haworth projections of: α-D-Glucopyranose, β-D-Glucopyranose, α-D-Fructofuranose, β-D-Fructopyranose.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Haworth Projection Rules:</strong> Groups on the right in Fischer projection go <strong>below</strong> the ring; groups on left go <strong>above</strong> the ring. The terminal –CH₂OH is always above the ring for D-sugars.</p>
+        <div class="formula-box">
+α-D-Glucopyranose (6-membered pyranose ring):
+Ring: C1-C2-C3-C4-C5-O (oxygen in ring)
+C1 (anomeric): –OH is BELOW the ring (α = below for D-glucose)
+C2: –OH below
+C3: –OH above
+C4: –OH below
+C5: –CH₂OH above the ring
+        </div>
+        <div class="formula-box">
+β-D-Glucopyranose:
+Same as α but C1 anomeric –OH is ABOVE the ring (β = above)
+This makes the molecule more stable (equatorial –OH)
+        </div>
+        <div class="formula-box">
+α-D-Fructofuranose (5-membered furanose ring from fructose):
+Ring: C2-C3-C4-C5-O (oxygen in ring)
+C2 (anomeric carbon of fructose): –OH is BELOW the ring (α)
+–CH₂OH (from C1) is above the ring (free)
+–CH₂OH (from C6) is above the ring
+C3: –OH below; C4: –OH below; C5: –OH above
+        </div>
+        <div class="formula-box">
+β-D-Fructopyranose (6-membered ring from fructose):
+Ring: C2-C3-C4-C5-C6-O
+C2 (anomeric): –OH ABOVE the ring (β)
+C1 (–CH₂OH) is below
+C3: –OH above; C4: –OH below; C5: –OH above
+        </div>
+        <div class="highlight-box"><strong>Memory trick:</strong> α = same side as the reference group (for D-sugars, the –OH below the ring); β = opposite side (–OH above the ring).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">5</span><span class="q-text">D-Glucose reacts with conc. HNO₃ [O] — what are the products?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Concentrated HNO₃ is a strong oxidising agent. It oxidises <strong>both</strong> the aldehyde group (–CHO) at C-1 AND the primary alcohol (–CH₂OH) at C-6 of D-Glucose simultaneously.</p>
+        <div class="formula-box">
+D-Glucose + conc. HNO₃ →
+CHO group → –COOH (carboxyl group)
+CH₂OH group → –COOH (carboxyl group)
+Product: HOOC–(CHOH)₄–COOH
+= Saccharic acid (D-glucaric acid / glucosaccharic acid)
+        </div>
+        <p>This product is a <strong>dicarboxylic acid (aldaric acid)</strong>. The test is used as evidence that glucose has one aldehyde end and one primary alcohol end.</p>
+        <div class="highlight-box">Saccharic acid is optically active — this evidence confirmed that glucose has an asymmetric structure with a specific arrangement of –OH groups.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">6</span><span class="q-text">Fructose with Br₂/H₂O, HIO₄, Excess Phenylhydrazine, (CH₃CO)₂O — find products A, B, C, D, E.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Fructose</strong> is a ketose sugar (keto group at C-2).</p>
+        <table class="info-table">
+          <thead><tr><th>Reagent</th><th>Product</th><th>Explanation</th></tr></thead>
+          <tbody>
+            <tr><td>Br₂/H₂O</td><td><strong>A: No reaction</strong> (or very slow)</td><td>Br₂/H₂O oxidises only aldehyde (–CHO). Fructose has keto group → does NOT easily react with bromine water. This distinguishes fructose from glucose.</td></tr>
+            <tr><td>HIO₄ (Periodic acid)</td><td><strong>B: Formaldehyde (HCHO) + other fragments</strong></td><td>HIO₄ cleaves vicinal diol (adjacent OH groups). Fructose (with C-1, C-2 close groups) gives HCHO from C-1 and various fragments.</td></tr>
+            <tr><td>NH₂OH [O] / Tollens'</td><td><strong>C: Positive Tollens' test</strong> (silver mirror)</td><td>Fructose is a reducing sugar (can tautomerise to aldose in alkaline conditions) → reduces Tollens' reagent.</td></tr>
+            <tr><td>Excess C₆H₅NHNH₂</td><td><strong>D: Glucosazone</strong> (same as glucose)</td><td>Fructose and glucose give the SAME osazone because C-3, 4, 5 configurations are identical — only C-1 and C-2 differ, both of which are destroyed in osazone formation.</td></tr>
+            <tr><td>(CH₃CO)₂O / CH₃COONa</td><td><strong>E: Fructose pentaacetate</strong></td><td>All 5 –OH groups of fructose are acetylated. This proves fructose has 5 hydroxyl groups.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">7</span><span class="q-text">Why is sucrose a non-reducing sugar?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Sucrose (table sugar) is made of <em>glucose + fructose</em> joined together. The key reason it cannot reduce is:</p>
+        <div class="highlight-box">
+          The glycosidic bond in sucrose is formed between the <strong>anomeric carbon of glucose (C-1)</strong> and the <strong>anomeric carbon of fructose (C-2)</strong>. Both anomeric carbons are involved in bonding.
+        </div>
+        <p>In a reducing sugar, the free anomeric –OH (free hemiacetal or hemiketal) can open the ring to give a free aldehyde or ketone group, which then reduces the reagent (Fehling's, Benedict's, or Tollens').</p>
+        <p>In sucrose, <em>both</em> anomeric carbons are locked in a glycosidic bond — neither can open the ring freely. So there is no free aldehyde/ketone group → sucrose <strong>cannot reduce</strong> Benedict's or Fehling's solution.</p>
+        <p>Sucrose is therefore a <em>non-reducing disaccharide</em>. Upon hydrolysis (acid or enzyme), it gives glucose + fructose, both of which are reducing sugars.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">8</span><span class="q-text">Convert D-Glucose to D-Mannose.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>D-Glucose and D-Mannose are <strong>C-2 epimers</strong> — they differ only in the configuration at C-2. The conversion is done by the <strong>Lobry de Bruyn–van Ekenstein rearrangement</strong> (isomerisation in dilute alkali) or via <strong>epimerisation</strong>.</p>
+        <p><strong>Method via oxidation–reduction:</strong></p>
+        <ol>
+          <li><strong>Step 1 — Oxidise D-Glucose:</strong> With bromine water → D-Gluconic acid (aldonic acid, C-1 becomes COOH).</li>
+          <li><strong>Step 2 — Lactonise:</strong> Glucose → Gluconolactone.</li>
+          <li><strong>Step 3 — React with SOCl₂:</strong> Converts –OH at C-2 to –Cl (with inversion).</li>
+          <li><strong>Step 4 — Replace with –OH:</strong> With AgOH or NaOH → gives C-2 inverted sugar = D-Mannonic acid.</li>
+          <li><strong>Step 5 — Reduce:</strong> D-Mannonic acid → D-Mannose (using Na-Hg amalgam).</li>
+        </ol>
+        <div class="highlight-box"><strong>Simple way to remember:</strong> Glucose and Mannose differ only at C-2. In Fischer projection, –OH at C-2 is on the right in glucose, and on the left in mannose.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">9</span><span class="q-text">Convert Glucose to Fructose.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Glucose (an aldose) → Fructose (a ketose). This interconversion happens in the body enzymatically, but chemically it can be done via the <strong>Lobry de Bruyn-van Ekenstein transformation</strong>.</p>
+        <p><strong>Reaction:</strong> Dilute alkali (like Ca(OH)₂) in solution causes isomerisation of glucose through an enediol intermediate:</p>
+        <div class="formula-box">
+D-Glucose ——[dilute alkali]——→ Enediol intermediate
+                                       ↓
+                              D-Fructose + D-Mannose (mixture)
+        </div>
+        <p><strong>Mechanism:</strong></p>
+        <ol>
+          <li>Base removes the C-2 proton from glucose → enolate forms.</li>
+          <li>The enolate is the <em>enediol</em> intermediate (shared between glucose, fructose, mannose).</li>
+          <li>Reprotonation at C-1 gives fructose; at C-2 gives mannose.</li>
+        </ol>
+        <div class="highlight-box">In the body, the enzyme <strong>phosphoglucose isomerase</strong> converts glucose-6-phosphate to fructose-6-phosphate in glycolysis with 100% specificity (no mannose formed).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">10</span><span class="q-text">How can you differentiate glucose and fructose chemically?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <table class="info-table">
+          <thead><tr><th>Test</th><th>Glucose</th><th>Fructose</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Bromine water (Br₂/H₂O)</strong></td><td>Decolourises (oxidised — has aldehyde –CHO)</td><td>No decolourisation (has keto group, resistant to Br₂/H₂O)</td></tr>
+            <tr><td><strong>Seliwanoff's test (resorcinol + HCl)</strong></td><td>Faint pink colour (after long time)</td><td>Deep red/cherry colour within 1 min (ketose-specific)</td></tr>
+            <tr><td><strong>Fehling's / Benedict's / Tollens' test</strong></td><td>Positive (reduces — brick red ppt / silver mirror)</td><td>Also positive (reduces in alkaline conditions via tautomerism)</td></tr>
+            <tr><td><strong>Osazone formation</strong></td><td>Same osazone as fructose — cannot differentiate</td><td>Same osazone as glucose</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box"><strong>Best test to distinguish:</strong> Seliwanoff's test and Bromine water test are the most specific. Fructose is a ketose, glucose is an aldose.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">11</span><span class="q-text">What is an Epimer? Give an example of a C-3 Epimer.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>An <strong>epimer</strong> is a type of diastereomer that differs from another carbohydrate in the configuration at <em>only one specific chiral carbon</em> (not the anomeric carbon).</p>
+        <p>Epimers are related to each other specifically by the position where the –OH group is flipped.</p>
+        <div class="highlight-box">
+          <strong>Examples:</strong><br>
+          • <strong>C-2 epimers:</strong> D-Glucose and D-Mannose (differ at C-2 only)<br>
+          • <strong>C-2 epimers:</strong> D-Glucose and D-Galactose... actually D-Galactose differs at C-4<br>
+          • <strong>C-3 epimer:</strong> D-Ribose and D-Arabinose — they differ only at C-3. In D-Ribose, C-3 has –OH on the right; in D-Arabinose, C-3 has –OH on the left in Fischer projection.<br>
+          • Another C-3 epimer pair: D-Allose and D-Altrose.
+        </div>
+        <p><strong>Note:</strong> Anomers (α and β) differ only at the anomeric carbon — they are NOT called epimers. Epimer term applies to non-anomeric positions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">12</span><span class="q-text">Give two evidences in favour of the linear (open-chain) structure of D-glucose.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Evidence 1 — Reaction with 7 moles of Acetic Anhydride (Acetylation):</strong></p>
+        <p>D-Glucose reacts with acetic anhydride [(CH₃CO)₂O] in the presence of sodium acetate to give <em>glucose pentaacetate</em>. This means glucose has <strong>5 free –OH groups</strong>, all of which get acetylated. This is consistent with the open-chain structure that has 5 –OH groups (at C-2, C-3, C-4, C-5 and one aldehydic –OH equivalent).</p>
+
+        <p><strong>Evidence 2 — Reduction to a hexahydric alcohol (Sorbitol):</strong></p>
+        <p>When D-glucose is reduced with sodium amalgam (Na-Hg) in dilute acid, it gives <em>Sorbitol</em>, a hexahydric alcohol (6 –OH groups). This confirms that glucose has a straight chain of 6 carbons with the formula C₆H₁₂O₆ and a carbonyl group (since a hexahydric alcohol can only come from reducing all 6 carbons having one carbonyl + 5 hydroxyls).</p>
+        <div class="formula-box">
+Glucose (CHO group + 5 CHOH groups) + 2[H] → Sorbitol (6 CHOH groups)
+        </div>
+        <div class="highlight-box"><strong>Other supporting evidences:</strong> Reaction with HCN, hydroxylamine, phenylhydrazine, and oxidation with HNO₃ to saccharic acid — all consistent with the open-chain structure.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">13</span><span class="q-text">Glucose and Fructose give the same osazone. Explain.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>When glucose or fructose react with excess phenylhydrazine (C₆H₅NHNH₂), they both give the same product called <strong>glucosazone</strong> (a bright yellow crystalline compound).</p>
+        <p><strong>Why the same osazone?</strong></p>
+        <p>In osazone formation, 3 moles of phenylhydrazine react with the sugar. The reaction involves:</p>
+        <ol>
+          <li>C-1 (aldehyde of glucose / potential aldehyde of fructose) reacts with 1st phenylhydrazine → phenylhydrazone.</li>
+          <li>Then C-2 is oxidised and reacts with 2nd phenylhydrazine.</li>
+          <li>The final osazone has a –CH=N–NHPh group at both C-1 and C-2.</li>
+        </ol>
+        <div class="highlight-box">
+          Since <strong>C-3, C-4, C-5</strong> of both glucose and fructose have <em>identical configurations</em>, and the osazone reaction destroys and replaces C-1 and C-2, the resulting osazone is the <strong>same compound</strong>. The sugar's identity below C-3 is all that matters.
+        </div>
+        <p>This also explains why D-Mannose gives the same osazone — Mannose differs from Glucose only at C-2, which is also destroyed in osazone formation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">14</span><span class="q-text">Give examples of reducing and non-reducing sugars.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>A <strong>reducing sugar</strong> is one that has a free anomeric –OH group (free hemiacetal/hemiketal) that can open to give a free aldehyde or α-keto group, thereby reducing other compounds.</p>
+        <table class="info-table">
+          <thead><tr><th>Type</th><th>Examples</th><th>Test (Fehling's/Benedict's/Tollens')</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Reducing sugars</strong></td><td>Glucose, Fructose, Galactose, Maltose, Lactose, Ribose, Arabinose, all monosaccharides</td><td>Positive (brick red ppt or silver mirror)</td></tr>
+            <tr><td><strong>Non-reducing sugars</strong></td><td>Sucrose (glucose-1,2-fructose), Trehalose, Raffinose</td><td>Negative (no reaction in alkaline copper solution)</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box"><strong>Key:</strong> Non-reducing sugars have their anomeric carbons involved in the glycosidic bond, so no free –OH is available for ring opening. On hydrolysis, they give reducing sugars.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">15</span><span class="q-text">Prove that glucose contains five hydroxyl groups.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Proof by Acetylation:</strong></p>
+        <p>When D-Glucose is treated with excess acetic anhydride [(CH₃CO)₂O] in the presence of sodium acetate, it forms <em>glucose pentaacetate</em>.</p>
+        <div class="formula-box">
+D-Glucose + 5 (CH₃CO)₂O → Glucose pentaacetate + 5 CH₃COOH
+(in the presence of pyridine or CH₃COONa)
+        </div>
+        <p>Since <strong>exactly 5 moles</strong> of acetic anhydride react per mole of glucose, and each –OH group reacts with one mole of acetic anhydride, this conclusively proves that glucose has <em>five free hydroxyl groups</em>.</p>
+        <div class="highlight-box">
+          <strong>Additional evidence:</strong> Reaction with methyl iodide (CH₃I) in the presence of AgOH gives glucose pentamethyl ether — again 5 methyl groups attach, confirming 5 –OH groups.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">16</span><span class="q-text">Prove that glucose contains one aldehyde group.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Proof 1 — Tollens' test:</strong></p>
+        <p>Glucose gives a positive Tollens' test (silver mirror forms) → confirms the presence of an aldehyde group (–CHO), not a ketone.</p>
+        <p><strong>Proof 2 — Reaction with hydroxylamine (NH₂OH):</strong></p>
+        <div class="formula-box">
+D-Glucose + NH₂OH → Glucose oxime (one oxime formed)
+        </div>
+        <p>Only <strong>one mole</strong> of hydroxylamine reacts per mole of glucose → only one carbonyl group present. If there were more, more NH₂OH would react.</p>
+        <p><strong>Proof 3 — Reduction to Sorbitol:</strong></p>
+        <p>Glucose is reduced with NaBH₄ or Na-Hg to give Sorbitol, a primary alcohol. This reduction of –CHO → –CH₂OH is specific to aldehydes.</p>
+        <p><strong>Proof 4 — Reaction with HCN:</strong></p>
+        <p>One mole of HCN adds to glucose → one cyanohydrin formed. This is characteristic of an aldehyde group.</p>
+        <div class="highlight-box"><strong>Conclusion:</strong> All these reactions together prove that glucose has exactly ONE aldehyde group, located at C-1 of the carbon chain.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 4 — AMINO ACIDS
+════════════════════════════════════════════════════ -->
+<section id="s4" class="section t4">
+  <div class="section-header">
+    <div class="section-icon">🧬</div>
+    <div>
+      <div class="section-title">Amino Acids</div>
+      <div class="section-desc">Zwitter ions, isoelectric points, Strecker synthesis, Gabriel phthalimide synthesis, and peptide bonds.</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">1</span><span class="q-text">What do you mean by Zwitter ion?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>A <strong>Zwitter ion</strong> (also called dipolar ion or amphoteric ion, from German "Zwitter" meaning hybrid/hermaphrodite) is a molecule that carries both a <em>positive charge</em> and a <em>negative charge</em> simultaneously, but has <em>no net charge overall</em>.</p>
+        <p>In amino acids, this happens because:</p>
+        <ul>
+          <li>The amino group (–NH₂) acts as a base and accepts a proton → becomes –NH₃⁺ (positively charged)</li>
+          <li>The carboxyl group (–COOH) acts as an acid and donates a proton → becomes –COO⁻ (negatively charged)</li>
+        </ul>
+        <div class="formula-box">
+Normal form:    H₂N–CH(R)–COOH
+Zwitter ion:   ⁺H₃N–CH(R)–COO⁻
+        </div>
+        <div class="highlight-box">
+          The zwitter ion form is the <strong>predominant form</strong> of amino acids in solid state and at their isoelectric point in solution. It's why amino acids have high melting points, are water-soluble, and don't act like simple amines or acids.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">2</span><span class="q-text">What do you mean by isoelectric point?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>The <strong>isoelectric point (pI or IEP)</strong> is the specific pH at which an amino acid (or protein) exists predominantly as a <em>zwitter ion</em> (equal number of positive and negative charges) and carries <strong>zero net electrical charge</strong>.</p>
+        <p>At the isoelectric point:</p>
+        <ul>
+          <li>The amino acid does not migrate in an electric field during electrophoresis.</li>
+          <li>Solubility is at its minimum (because zwitter ions don't repel each other as much).</li>
+          <li>Viscosity is minimum.</li>
+        </ul>
+        <div class="formula-box">
+For a simple amino acid (one –NH₂, one –COOH):
+pI = (pKa₁ + pKa₂) / 2
+
+Where pKa₁ = pKa of –COOH group
+      pKa₂ = pKa of –NH₃⁺ group
+        </div>
+        <p><strong>Examples:</strong> Glycine has pI = 5.97, Alanine has pI = 6.01, Glutamic acid (acidic) has pI = 3.22, Lysine (basic) has pI = 9.74.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">3</span><span class="q-text">Write down the identification reactions of α-amino acids.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>The most important identification reactions of α-amino acids:</p>
+        <table class="info-table">
+          <thead><tr><th>Test</th><th>Reagent</th><th>Observation</th><th>Significance</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ninhydrin test</strong></td><td>Ninhydrin (triketohydrindene hydrate)</td><td>Intense purple/violet colour (Ruhemann's purple)</td><td>Detects α-amino acids; proline gives yellow colour. Most sensitive test.</td></tr>
+            <tr><td><strong>Biuret test</strong></td><td>NaOH + CuSO₄</td><td>Violet/purple colour</td><td>Detects peptide bonds (2+ amino acids joined)</td></tr>
+            <tr><td><strong>Xanthoproteic test</strong></td><td>Conc. HNO₃ then NH₃</td><td>Yellow → orange colour</td><td>Detects aromatic amino acids (Phe, Tyr, Trp)</td></tr>
+            <tr><td><strong>Millon's test</strong></td><td>Millon's reagent (Hg in HNO₃)</td><td>Red precipitate</td><td>Detects tyrosine (phenolic –OH)</td></tr>
+            <tr><td><strong>Sakaguchi test</strong></td><td>α-Naphthol + NaOCl</td><td>Red colour</td><td>Detects arginine (guanidino group)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">4</span><span class="q-text">Reaction: Ketone + NH₄Cl → A → KCN → B → H₃O⁺ → amino acid. Identify the synthesis.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>This is the <strong>Strecker Synthesis</strong> of amino acids.</p>
+        <div class="formula-box">
+Step 1: R–CO–CH₃ + NH₄Cl → R–C(=NH)–CH₃ + H₂O + HCl
+         (Ketone)              (Imine / Schiff's base) = Product A
+
+Step 2: R–C(=NH)–CH₃ + KCN → R–C(NH₂)(CN)–CH₃
+         (Imine)               (α-aminonitrile) = Product B
+
+Step 3: R–C(NH₂)(CN)–CH₃ + H₃O⁺ (hydrolysis) →
+         R–C(NH₂)(COOH)–CH₃ + NH₄⁺
+         (α-amino acid) = Final product
+        </div>
+        <div class="highlight-box">
+          <strong>Strecker Synthesis:</strong> Aldehyde/Ketone + NH₃ + HCN → α-aminonitrile → hydrolysis → α-amino acid.<br>
+          A = Imine (Schiff's base), B = α-amino nitrile (cyanohydrin-amine)
+        </div>
+        <p>This is a general method to make any α-amino acid from the corresponding aldehyde or ketone.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">5</span><span class="q-text">Gabriel phthalimide type reaction for amino acid synthesis. Identify A, B, C.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>This is the <strong>Gabriel Phthalimide Synthesis</strong> modified for amino acid preparation.</p>
+        <div class="formula-box">
+Phthalimide + KOH/EtOH → A = Potassium phthalimide (K-salt)
+
+Potassium phthalimide + Br–CH₂–COOEt (ethyl bromoacetate)
+         → B = N-(ethoxycarbonylmethyl)phthalimide
+           (Phthalimide N-alkylated with glycine ester)
+
+B + H₃O⁺ (hydrolysis) → C = Glycine (H₂N–CH₂–COOH)
+         (phthalic acid is removed; amino group is released)
+        </div>
+        <div class="highlight-box">
+          <strong>A</strong> = Potassium phthalimide (nucleophile)<br>
+          <strong>B</strong> = N-substituted phthalimide (alkylated intermediate)<br>
+          <strong>C</strong> = α-Amino acid (after hydrolysis with acid or base + acidification)
+        </div>
+        <p>The Gabriel synthesis is clean because it avoids over-alkylation — the nitrogen in phthalimide can only be alkylated once (it's a secondary amide).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">6</span><span class="q-text">Prepare methionine by Strecker synthesis.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Methionine structure: <strong>CH₃–S–CH₂–CH₂–CH(NH₂)–COOH</strong></p>
+        <p>For Strecker synthesis, we need the corresponding aldehyde (one carbon less): <em>3-(methylthio)propanal (methional)</em>: CH₃–S–CH₂–CH₂–CHO</p>
+        <div class="formula-box">
+Step 1: CH₃–S–CH₂–CH₂–CHO + NH₃ → CH₃–S–CH₂–CH₂–CH=NH
+         (Methional)              (Imine / aldimine, A)
+
+Step 2: CH₃–S–CH₂–CH₂–CH=NH + HCN → CH₃–S–CH₂–CH₂–CH(NH₂)–CN
+         (Imine)                         (α-aminonitrile, B)
+
+Step 3: CH₃–S–CH₂–CH₂–CH(NH₂)–CN + H₃O⁺ → 
+         CH₃–S–CH₂–CH₂–CH(NH₂)–COOH
+         = L/DL-Methionine
+        </div>
+        <div class="highlight-box"><strong>Methionine</strong> is an essential amino acid and is the only sulfur-containing amino acid made by Strecker synthesis in one step from methional + NH₃ + HCN.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">7</span><span class="q-text">Calculate isoelectric point of aspartic acid. pK₁=1.88, pK₂=3.65, pK₃=9.68.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Aspartic acid is an <strong>acidic amino acid</strong> with two –COOH groups and one –NH₂ group:</p>
+        <ul>
+          <li>pK₁ = 1.88 → α-COOH</li>
+          <li>pK₂ = 3.65 → side chain –COOH</li>
+          <li>pK₃ = 9.68 → α-NH₃⁺</li>
+        </ul>
+        <p>For acidic amino acids, the isoelectric point is between pK₁ and pK₂ (both acid groups):</p>
+        <div class="formula-box">
+pI = (pK₁ + pK₂) / 2
+   = (1.88 + 3.65) / 2
+   = 5.53 / 2
+   = 2.77
+        </div>
+        <div class="highlight-box"><strong>Answer: pI of Aspartic acid = 2.77</strong> — This is below 7 because aspartic acid is acidic (two –COOH groups), so it needs a very low pH to become electrically neutral.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">8</span><span class="q-text">Calculate isoelectric point of lysine. pKa of α-NH₃⁺ = 8.95, side chain NH₃⁺ = 10.53, α-COOH = 2.18.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Lysine is a <strong>basic amino acid</strong> with one –COOH and two –NH₂ groups:</p>
+        <ul>
+          <li>pK₁ = 2.18 → α-COOH</li>
+          <li>pK₂ = 8.95 → α-NH₃⁺</li>
+          <li>pK₃ = 10.53 → ε-NH₃⁺ (side chain)</li>
+        </ul>
+        <p>For basic amino acids, the isoelectric point is between pK₂ and pK₃ (both amino groups):</p>
+        <div class="formula-box">
+pI = (pK₂ + pK₃) / 2
+   = (8.95 + 10.53) / 2
+   = 19.48 / 2
+   = 9.74
+        </div>
+        <div class="highlight-box"><strong>Answer: pI of Lysine = 9.74</strong> — This is above 7 because lysine is basic (two –NH₂ groups), so it needs a high pH to become electrically neutral.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">9</span><span class="q-text">Prepare methionine from phthalimide (Gabriel synthesis).</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Methionine: <strong>CH₃–S–CH₂–CH₂–CH(NH₂)–COOH</strong></p>
+        <div class="formula-box">
+Step 1: Phthalimide + KOH/EtOH → Potassium phthalimide (A)
+
+Step 2: Potassium phthalimide + Cl–CH₂–CH₂–S–CH₃ (or 
+         appropriate alkyl halide = Br–CH(COOC₂H₅)–CH₂–CH₂–SCH₃)
+         → N-alkylated phthalimide (B)
+
+Step 3: B + H₃O⁺ / or NaOH then HCl →
+         Ring opens, phthalic acid is released,
+         Free –NH₂ group is revealed
+         → H₂N–CH(COOH)–CH₂–CH₂–S–CH₃
+         = DL-Methionine (C)
+        </div>
+        <div class="highlight-box">
+          The alkyl halide used must be: <strong>ethyl α-bromo-γ-(methylthio)butyrate</strong><br>
+          Br–CH(COOEt)–CH₂CH₂–SCH₃<br>
+          This introduces the correct carbon skeleton and sulfide group.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">10</span><span class="q-text">Phthalimide + KOH/EtOH → A; then + H₃C–Br → B; then + NaOH → C + D. Identify.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Phthalimide + KOH/EtOH → A = Potassium phthalimide
+(The acidic N–H proton is removed by KOH)
+
+Potassium phthalimide + CH₃Br (methyl bromide) → 
+  B = N-Methylphthalimide
+  (The potassium salt alkylates on nitrogen)
+
+N-Methylphthalimide + NaOH (aqueous hydrolysis) →
+  C = Methylamine (CH₃NH₂) + D = Sodium phthalate (phthalic acid salt)
+        </div>
+        <div class="highlight-box">
+          <strong>A</strong> = Potassium phthalimide &nbsp;|&nbsp; <strong>B</strong> = N-methylphthalimide &nbsp;|&nbsp; <strong>C</strong> = Methylamine (CH₃NH₂) &nbsp;|&nbsp; <strong>D</strong> = Sodium phthalate<br><br>
+          This is the classic <strong>Gabriel phthalimide synthesis</strong> for preparing primary amines without contamination by secondary or tertiary amines.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">11</span><span class="q-text">Prepare tryptophan by Strecker synthesis.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>Tryptophan structure: Indole ring with –CH₂–CH(NH₂)–COOH side chain.</p>
+        <p>For Strecker, we need the corresponding aldehyde: <em>Indole-3-carboxaldehyde (Indole-3-CHO)</em></p>
+        <div class="formula-box">
+Step 1: Indole-3-CHO + NH₃ → Indole-3-CH=NH  (Imine)
+
+Step 2: Indole-3-CH=NH + HCN → Indole-3-CH(NH₂)–CN
+         (α-aminonitrile)
+
+Step 3: Indole-3-CH(NH₂)–CN + H₂O / H⁺ →
+         Indole-3-CH(NH₂)–COOH
+         = DL-Tryptophan
+        </div>
+        <div class="highlight-box">Tryptophan is an <strong>essential amino acid</strong> and contains an indole ring system — it is the largest naturally occurring amino acid. The Strecker method gives the racemic (DL) mixture.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">12</span><span class="q-text">Give one example each: (a) Acidic amino acid (b) Basic amino acid.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <table class="info-table">
+          <thead><tr><th>Type</th><th>Example</th><th>Side chain</th><th>pI</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Acidic amino acid</strong></td><td><strong>Aspartic acid (Asp)</strong> and <strong>Glutamic acid (Glu)</strong></td><td>Extra –COOH group in the side chain; more acidic than basic groups</td><td>~2.77 (Asp), ~3.22 (Glu) — below 7</td></tr>
+            <tr><td><strong>Basic amino acid</strong></td><td><strong>Lysine (Lys)</strong>, <strong>Arginine (Arg)</strong>, <strong>Histidine (His)</strong></td><td>Extra –NH₂ group (Lys), guanidino group (Arg), imidazole ring (His)</td><td>~9.74 (Lys), ~10.76 (Arg) — above 7</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box"><strong>Acidic → pI &lt; 7 (more –COOH groups)</strong><br><strong>Basic → pI &gt; 7 (more –NH₂ groups)</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">13</span><span class="q-text">Phthalimide + KOH/EtOH → A; + PhCH₂Br → B; + NaOH → C + D. Identify.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Phthalimide + KOH/EtOH → A = Potassium phthalimide
+
+Potassium phthalimide + PhCH₂Br (benzyl bromide) →
+  B = N-Benzylphthalimide
+
+N-Benzylphthalimide + NaOH (aq. hydrolysis) →
+  C = Benzylamine (PhCH₂NH₂)  +  D = Sodium phthalate
+        </div>
+        <div class="highlight-box">
+          <strong>A</strong> = Potassium phthalimide &nbsp;|&nbsp;
+          <strong>B</strong> = N-Benzylphthalimide &nbsp;|&nbsp;
+          <strong>C</strong> = Benzylamine (C₆H₅CH₂NH₂) &nbsp;|&nbsp;
+          <strong>D</strong> = Disodium phthalate<br><br>
+          This is the Gabriel synthesis of benzylamine — a pure primary amine with no secondary or tertiary amine contamination.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">14</span><span class="q-text">What do you mean by peptide bond?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>A <strong>peptide bond</strong> is a special type of <em>amide bond</em> (–CO–NH–) formed when the <strong>α-carboxyl group (–COOH)</strong> of one amino acid reacts with the <strong>α-amino group (–NH₂)</strong> of another amino acid, with the <em>loss of one water molecule</em>.</p>
+        <div class="formula-box">
+H₂N–CHR₁–COOH  +  H₂N–CHR₂–COOH
+            →  H₂N–CHR₁–CO–NH–CHR₂–COOH  +  H₂O
+                          ↑
+                    Peptide bond (–CO–NH–)
+        </div>
+        <p><strong>Key properties of a peptide bond:</strong></p>
+        <ul>
+          <li>It has <em>partial double bond character</em> (resonance between C=O and C–N) → restricted rotation around the C–N bond.</li>
+          <li>It is <em>planar</em> (trans configuration is preferred).</li>
+          <li>It is hydrolysed by strong acids, bases, or proteolytic enzymes.</li>
+          <li>It is detected by the <em>biuret test</em> (violet colour with CuSO₄ + NaOH).</li>
+        </ul>
+        <p>A chain of amino acids connected by peptide bonds is called a <em>polypeptide</em>. Proteins are polypeptides.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">15</span><span class="q-text">Show the structure of Ala-Gly dipeptide.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Ala-Gly</strong> means <em>Alanine</em> is at the N-terminal (left) and <em>Glycine</em> is at the C-terminal (right).</p>
+        <p>Alanine: H₂N–CH(CH₃)–COOH (R = –CH₃)</p>
+        <p>Glycine: H₂N–CH₂–COOH (R = –H)</p>
+        <div class="formula-box">
+Ala-Gly dipeptide structure:
+
+H₂N–CH(CH₃)–CO–NH–CH₂–COOH
+   ↑              ↑
+N-terminus    Peptide bond
+(Alanine)     C-terminus (Glycine)
+
+Written fully:
+H₂N–C(H)(CH₃)–C(=O)–NH–CH₂–COOH
+        </div>
+        <div class="highlight-box">
+          <strong>Note:</strong> Ala-Gly and Gly-Ala are <em>different dipeptides</em> — order matters! The N-terminus is always written first. Ala-Gly has Ala's –NH₂ free and Gly's –COOH free.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 5 — PHASE RULE
+════════════════════════════════════════════════════ -->
+<section id="s5" class="section t5">
+  <div class="section-header">
+    <div class="section-icon">📐</div>
+    <div>
+      <div class="section-title">Heterogeneous Equilibrium &amp; Phase Rule</div>
+      <div class="section-desc">Gibbs phase rule, phase diagrams for H₂O, CO₂ and Sulphur, Clausius-Clapeyron equation, and system calculations.</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">1</span><span class="q-text">Define phase (P), component (C) and degree of freedom (F).</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Phase (P):</strong> A phase is a <em>physically distinct, homogeneous, and mechanically separable portion</em> of a system that is uniform throughout in composition and physical state.</p>
+        <ul>
+          <li>Example: Ice + Water + Water vapour = 3 phases (solid, liquid, gas)</li>
+          <li>All gases mix freely → gas mixtures = 1 phase</li>
+          <li>Miscible liquids → 1 phase; immiscible liquids → 2 phases</li>
+        </ul>
+        <p><strong>Component (C):</strong> The minimum number of <em>independently variable chemical species</em> needed to describe the composition of all phases in a system.</p>
+        <ul>
+          <li>For pure water: C = 1 (only H₂O)</li>
+          <li>For NaCl solution: C = 2 (NaCl + H₂O)</li>
+          <li>For CaCO₃ ⇌ CaO + CO₂: C = 2 (any two of the three species fix the third)</li>
+        </ul>
+        <p><strong>Degree of Freedom (F):</strong> The minimum number of independent variables (temperature, pressure, concentration) that must be specified to <em>completely and uniquely define the state of a system</em> without causing any phase to appear or disappear.</p>
+        <div class="formula-box">
+Gibbs Phase Rule: F = C – P + 2
+
+Where: F = degree of freedom
+       C = number of components
+       P = number of phases
+       2 = temperature and pressure (two variables)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">2</span><span class="q-text">What is the 'triple point'? What is the degree of freedom at the triple point?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>The <strong>triple point</strong> is a specific set of temperature and pressure at which all three phases of a substance (solid, liquid, and gas) <em>coexist simultaneously</em> in equilibrium.</p>
+        <div class="highlight-box">
+          <strong>For water:</strong> Triple point is at 273.16 K (0.01°C) and 4.58 mm Hg (0.006 atm).<br>
+          <strong>For sulphur:</strong> Metastable triple point at 95.6°C and 0.006 mm Hg.
+        </div>
+        <p><strong>Degree of freedom at the triple point:</strong></p>
+        <div class="formula-box">
+For water at triple point:
+C = 1 (only H₂O), P = 3 (solid + liquid + gas)
+F = C – P + 2 = 1 – 3 + 2 = 0
+
+F = 0 → Invariant point (no freedom)
+        </div>
+        <p>F = 0 means the triple point is a <em>fixed point</em> — you cannot change temperature or pressure without losing one of the three phases. This is why the triple point of water is used as a reference standard in thermometry.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">3</span><span class="q-text">What is the eutectic point or cryohydric point?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>The <strong>eutectic point</strong> (also called the <em>cryohydric point</em> when water is one component) is the specific temperature and composition at which a <em>liquid mixture solidifies completely at a constant temperature</em> to give a <em>mixture of two solid phases simultaneously</em>.</p>
+        <div class="highlight-box">
+          <strong>Key features of the eutectic point:</strong><br>
+          • The eutectic mixture has the <em>lowest possible melting point</em> for that two-component system.<br>
+          • At this point: P = 3 (two solids + one liquid), C = 2 → F = 2 – 3 + 2 = <strong>1</strong>... wait: since the eutectic solidifies at a fixed T and P, it appears to have F = 0 if pressure is fixed. At constant P: F = C – P + 1 = 2 – 3 + 1 = 0 → invariant.<br>
+          • The eutectic mixture behaves like a pure substance in that it has a sharp melting point.
+        </div>
+        <p><strong>Example:</strong> Pb-Ag system: Eutectic point at 303°C, with 97.4% Pb and 2.6% Ag. Below this temperature, both Pb and Ag crystallise simultaneously.</p>
+        <p><strong>Practical uses:</strong> Soldering (Sn-Pb eutectic at 183°C), antifreeze mixtures, and identifying precious metals (Pattinson's process uses eutectic behaviour to concentrate silver from lead).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">4</span><span class="q-text">What is reduced phase rule?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>When pressure is kept constant (as in most laboratory experiments, where the system is open to the atmosphere), the phase rule is modified. The pressure term is no longer a variable, so we lose one degree of freedom.</p>
+        <p>This modified form is called the <strong>Reduced Phase Rule</strong> or <strong>Condensed Phase Rule</strong>:</p>
+        <div class="formula-box">
+Normal Phase Rule:  F = C – P + 2
+Reduced Phase Rule: F' = C – P + 1
+
+(When pressure is fixed, the '2' becomes '1')
+        </div>
+        <p>This is especially useful in studying two-component systems (binary alloys, salt-water systems) where experiments are done at atmospheric pressure. The degree of freedom calculated is only with respect to temperature and composition (not pressure).</p>
+        <div class="highlight-box">
+          <strong>Example:</strong> Pb-Ag system at fixed pressure. At eutectic point: F' = 2 – 3 + 1 = 0 (invariant). On a cooling curve, eutectic solidification appears as a horizontal halt.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">5</span><span class="q-text">What is peritectic/transition temperature? What is its value for sulphur?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>The <strong>transition temperature</strong> (or peritectic temperature) is the temperature at which <em>one solid phase converts reversibly into another solid phase</em> — i.e., two allotropic (or polymorphic) forms of a substance are in equilibrium.</p>
+        <p>At the transition temperature:</p>
+        <ul>
+          <li>The two solid forms coexist in equilibrium.</li>
+          <li>If temperature rises above it → one form becomes stable; below → the other is stable.</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>For Sulphur:</strong><br>
+          Transition temperature = <strong>95.6°C (368.55 K)</strong> at 1 atm<br>
+          Below 95.6°C: Rhombic sulphur (α-S) is stable.<br>
+          Above 95.6°C (up to melting point 119°C): Monoclinic sulphur (β-S) is stable.<br>
+          At exactly 95.6°C: Both rhombic and monoclinic sulphur coexist in equilibrium.
+        </div>
+        <p><strong>Peritectic temperature</strong> specifically refers to a temperature in two-component systems where a solid phase reacts with a liquid phase to form a different solid phase. Example: In the Na₂SO₄–H₂O system, Na₂SO₄·10H₂O converts to anhydrous Na₂SO₄ at 32.4°C (transition temperature).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">6</span><span class="q-text">Draw and explain phase diagrams for H₂O, CO₂, and Sulphur. Calculate degree of freedom at different points, lines, and areas.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>General Rules for Phase Diagram (C = 1 system):</strong></p>
+        <div class="formula-box">
+F = C – P + 2 = 1 – P + 2 = 3 – P
+
+Area (1 phase):  F = 3 – 1 = 2 (bivariant — need T and P)
+Line (2 phases): F = 3 – 2 = 1 (univariant — fix T, P adjusts)
+Point (3 phases):F = 3 – 3 = 0 (invariant — triple point is fixed)
+        </div>
+
+        <p><strong>Phase Diagram of H₂O (Water):</strong></p>
+        <ul>
+          <li><strong>Three curves:</strong> Fusion curve (ice-water), Vaporisation curve (water-steam), Sublimation curve (ice-steam).</li>
+          <li><strong>Triple point:</strong> 0.01°C, 4.58 mm Hg — all three phases meet.</li>
+          <li><strong>Special feature:</strong> The fusion curve has a <em>negative slope</em> (tilts left) — water is one of the few substances whose melting point decreases with increasing pressure (because ice is less dense than water).</li>
+          <li><strong>Critical point:</strong> 374°C, 218 atm — above this, water exists only as supercritical fluid.</li>
+        </ul>
+
+        <p><strong>Phase Diagram of CO₂:</strong></p>
+        <ul>
+          <li><strong>Triple point:</strong> –56.6°C, 5.11 atm (above 1 atm!).</li>
+          <li><strong>Normal boiling point:</strong> CO₂ does not have a normal boiling point at 1 atm — at atmospheric pressure, solid CO₂ directly sublimes (–78.5°C).</li>
+          <li><strong>Fusion curve:</strong> Positive slope (unlike water) — CO₂ solid is denser than liquid.</li>
+          <li><strong>Critical point:</strong> 31.1°C, 73 atm.</li>
+        </ul>
+
+        <p><strong>Phase Diagram of Sulphur (S):</strong></p>
+        <p>Sulphur has two solid allotropes: Rhombic (Sα) and Monoclinic (Sβ).</p>
+        <ul>
+          <li><strong>4 phases possible:</strong> Rhombic S, Monoclinic S, Liquid S, Vapour S.</li>
+          <li><strong>3 triple points:</strong><br>
+            &nbsp;&nbsp;O = Rhombic + Monoclinic + Vapour at 95.6°C, 0.006 mm Hg<br>
+            &nbsp;&nbsp;B = Monoclinic + Liquid + Vapour at 120°C, 0.04 mm Hg (melting point of monoclinic)<br>
+            &nbsp;&nbsp;C = Rhombic + Liquid + Vapour at 114°C (metastable)</li>
+          <li><strong>Transition temperature (O):</strong> 95.6°C — most important point.</li>
+        </ul>
+        <div class="highlight-box"><strong>Key difference:</strong> Water's fusion curve has negative slope (exceptional). CO₂ sublimates at 1 atm (triple point above 1 atm). Sulphur has two allotropes giving a more complex diagram with multiple triple points.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">7</span><span class="q-text">Write down the conditions for phase equilibrium.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>For a system to be in <strong>phase equilibrium</strong>, the following thermodynamic conditions must be satisfied simultaneously for all phases:</p>
+        <ol>
+          <li><strong>Thermal Equilibrium:</strong> Temperature must be equal in all phases.<br>
+          <em>Tα = Tβ = Tγ = ...</em><br>
+          (If temperatures differ, heat flows until they equalise.)</li>
+          <li><strong>Mechanical Equilibrium:</strong> Pressure must be equal in all phases.<br>
+          <em>Pα = Pβ = Pγ = ...</em><br>
+          (If pressures differ, phases expand/contract.)</li>
+          <li><strong>Chemical Equilibrium (Chemical Potential):</strong> The chemical potential (μ) of each component must be equal in all phases.<br>
+          <em>μᵢα = μᵢβ = μᵢγ = ...</em> for each component i.<br>
+          (If chemical potentials differ, mass transfers between phases.)</li>
+        </ol>
+        <div class="highlight-box"><strong>Summary:</strong> Phase equilibrium requires that T, P, and chemical potential (μ) of every component are <em>uniform throughout all phases</em>. The chemical potential condition is the most fundamental — it accounts for concentration-driven mass transfer between phases.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">8</span><span class="q-text">Establish the Gibbs phase rule relationship.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Derivation of Gibbs Phase Rule: F = C – P + 2</strong></p>
+        <div class="step"><span class="step-num">1</span><span>Consider a system with <em>C</em> components and <em>P</em> phases in equilibrium.</span></div>
+        <div class="step"><span class="step-num">2</span><span><strong>Total variables:</strong> To describe a single phase, we need (C–1) concentration terms (since concentrations must add to 1), plus T and P. For P phases: Total variables = P(C–1) + 2.</span></div>
+        <div class="step"><span class="step-num">3</span><span><strong>Equilibrium conditions (constraints):</strong> For each component, its chemical potential must be equal in all phases. This gives (P–1) equations per component. Total equations = C(P–1).</span></div>
+        <div class="step"><span class="step-num">4</span><span><strong>Degree of freedom = Variables – Constraints:</strong></span></div>
+        <div class="formula-box">
+F = [P(C-1) + 2] - [C(P-1)]
+  = PC - P + 2 - CP + C
+  = C - P + 2
+
+∴ F = C - P + 2
+        </div>
+        <div class="highlight-box"><strong>Gibbs Phase Rule: F = C – P + 2</strong><br>This elegant equation was derived by J.W. Gibbs (1875) and is one of the most powerful tools in physical chemistry for predicting the behaviour of multi-phase systems.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">9</span><span class="q-text">Why can a system not have four phases?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>For a <strong>one-component system</strong> (C = 1), the phase rule gives:</p>
+        <div class="formula-box">
+F = C – P + 2 = 1 – P + 2 = 3 – P
+
+For P = 4:
+F = 3 – 4 = –1
+
+A negative degree of freedom is physically impossible.
+        </div>
+        <p>Since F cannot be negative (you can't have fewer than zero variables to specify), a system with C = 1 cannot have four phases coexisting in equilibrium.</p>
+        <div class="highlight-box">
+          <strong>Maximum phases for C = 1:</strong> P = 3 (gives F = 0 — triple point, just possible).<br>
+          P = 4 would require F = –1 which has no physical meaning — it's thermodynamically impossible.<br><br>
+          For a two-component system (C = 2): Maximum phases = 4 (gives F = 0 — quadruple point).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">10</span><span class="q-text">Why is rhombic sulphur more common in nature than monoclinic sulphur?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>This is because of the <em>thermodynamic stability</em> of rhombic sulphur at ordinary (room) temperature and pressure.</p>
+        <ul>
+          <li>Rhombic sulphur (α-S) is the <strong>stable form below 95.6°C</strong> at atmospheric pressure.</li>
+          <li>Monoclinic sulphur (β-S) is stable only <strong>between 95.6°C and 119°C</strong>.</li>
+          <li>Nature's average temperature is well below 95.6°C, so rhombic is the thermodynamically stable allotrope.</li>
+          <li>If monoclinic sulphur is cooled below 95.6°C, it slowly converts back to rhombic sulphur (though this conversion can be slow — kinetics matter).</li>
+        </ul>
+        <div class="highlight-box"><strong>Summary:</strong> Since normal environmental temperatures are below the 95.6°C transition temperature, rhombic sulphur is the thermodynamically stable (lower free energy) allotrope and dominates in nature. Monoclinic sulphur converts back to rhombic on cooling.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">11</span><span class="q-text">What is the difference between melting point and triple point?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <table class="info-table">
+          <thead><tr><th>Property</th><th>Melting Point</th><th>Triple Point</th></tr></thead>
+          <tbody>
+            <tr><td>Definition</td><td>Temperature at which solid and liquid are in equilibrium at 1 atm (or any specific pressure)</td><td>Temperature and pressure at which solid, liquid, and gas are all in equilibrium simultaneously</td></tr>
+            <tr><td>Phases present</td><td>Two (solid + liquid)</td><td>Three (solid + liquid + gas)</td></tr>
+            <tr><td>Pressure</td><td>Usually measured at 1 atm (standard)</td><td>Only one specific pressure (fixed)</td></tr>
+            <tr><td>For water</td><td>0°C at 1 atm</td><td>0.01°C at 0.006 atm (4.58 mm Hg)</td></tr>
+            <tr><td>Phase rule</td><td>F = 1 (univariant — can change P and T together along fusion curve)</td><td>F = 0 (invariant — completely fixed)</td></tr>
+            <tr><td>Variation with P</td><td>Changes with pressure (for water, MP decreases with P)</td><td>Cannot vary — it's a single fixed point</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">12</span><span class="q-text">What are congruent and incongruent melting points? Give examples.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Congruent Melting Point:</strong> A compound melts <em>without decomposition</em> to give a liquid of the <em>same composition</em> as the solid. The compound is stable up to its melting point.</p>
+        <div class="highlight-box"><strong>Example:</strong> KNO₃ melts congruently. CaCl₂·6H₂O melts congruently at 29.2°C. The liquid formed has the same ratio of components as the solid hydrate.</div>
+        <p><strong>Incongruent Melting Point (Meritectic / Peritectic point):</strong> A compound melts <em>with decomposition</em> — it gives a liquid of <em>different composition</em> plus another solid phase. The compound does not exist as a liquid phase at that temperature.</p>
+        <div class="highlight-box"><strong>Example:</strong> Na₂SO₄·10H₂O (Glauber's salt) — at 32.4°C, it doesn't simply melt; instead, it decomposes: Na₂SO₄·10H₂O → anhydrous Na₂SO₄ (solid) + saturated solution. This temperature (32.4°C) is its incongruent melting point or transition point.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">13</span><span class="q-text">Draw the Pb-Ag eutectic phase diagram, mentioning the eutectic temperature and percentages.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>The <strong>Pb-Ag (Lead-Silver) system</strong> is a classic two-component eutectic system used in metallurgy (Pattinson's process).</p>
+        <div class="formula-box">
+Key data:
+• Melting point of pure Pb = 327°C
+• Melting point of pure Ag = 961°C
+• Eutectic point: 303°C, with 97.4% Pb and 2.6% Ag by mass
+• Eutectic composition is very Pb-rich (silver impurity in lead)
+
+Phase diagram description (text representation):
+Temperature
+961°C|  Ag melting point
+     |
+     |       Liquid Pb-Ag alloy
+     |      /               \
+     |     /                 \
+327°C|  Pb MP               \
+     |   \                   \
+     |    \                   \
+303°C|-----*E*-----------------  (Eutectic point)
+     |  Pb(s)+Liq  |  Ag(s)+Liq
+     |  Pb(s) + Ag(s)  (both solids)
+     |________________________
+        97.4%Pb  50%    2.6%Pb
+        (100%Pb)        (100%Ag)
+              % Composition (Pb)
+        </div>
+        <div class="highlight-box">
+          <strong>Industrial significance:</strong> Pattinson's process uses the Pb-Ag eutectic. When silver-rich lead is cooled, pure Pb crystals form first, enriching the remaining liquid in silver. This is repeated until the eutectic composition is reached. The silver can then be recovered.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">14</span><span class="q-text">What is a quadruple point?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>A <strong>quadruple point</strong> is a point at which <em>four phases</em> of a two-component system (C = 2) coexist in equilibrium simultaneously.</p>
+        <div class="formula-box">
+Using Gibbs Phase Rule at quadruple point:
+F = C – P + 2 = 2 – 4 + 2 = 0
+
+F = 0 → Invariant (completely fixed — one specific T, P, and composition)
+        </div>
+        <p>Just like the triple point is the maximum for a one-component system (P = 3, F = 0), the <em>quadruple point is the maximum</em> for a two-component system (P = 4, F = 0).</p>
+        <div class="highlight-box">
+          <strong>Example:</strong> In the Na₂SO₄–H₂O system, a quadruple point occurs where Na₂SO₄·10H₂O (solid), Na₂SO₄ (anhydrous solid), saturated solution (liquid), and water vapour (gas) all coexist. This is at 32.4°C and a specific pressure.
+        </div>
+        <p>A five-phase coexistence in a two-component system would require F = –1, which is impossible.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">15</span><span class="q-text">How does the boiling point of ice change if pressure is increased by 1 atm? (Density of ice = 0.917 g/cc, water = 1 g/cc, L = 80 Cal/g)</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>This uses the <strong>Clausius-Clapeyron equation</strong> for solid-liquid equilibrium:</p>
+        <div class="formula-box">
+dT/dP = T × ΔV / ΔHfusion
+
+Where:
+T = 273 K (melting point of ice in Kelvin)
+ΔHfusion = 80 Cal/g = 80 × 4.184 J/g ≈ 335 J/g
+ΔV = V_liquid – V_solid = (1/ρ_liquid) – (1/ρ_solid)
+   = (1/1.000) – (1/0.917) cc/g
+   = 1.000 – 1.090 = –0.090 cc/g
+
+Convert: ΔV = –0.090 cc/g = –0.090 × 10⁻⁶ m³/g = –9.0×10⁻⁸ m³/g
+
+dT/dP = (273 × (–9.0×10⁻⁸)) / 335
+(converting: ΔH = 335 J/g, ΔV in m³/g, P in Pa)
+dT/dP = –7.34×10⁻³ K/atm ... 
+
+Using CGS units directly:
+ΔV = –0.090 cc/g
+ΔHfusion = 80 Cal/g
+1 Cal = 41.3 cc·atm
+
+dT/dP = T·ΔV / ΔH = 273 × (–0.090) / (80 × 41.3)
+       = –24.57 / 3304
+       = –0.00744 K/atm
+       ≈ –0.0074°C / atm
+
+For ΔP = 1 atm:
+ΔT = dT/dP × ΔP = –0.0074°C
+        </div>
+        <div class="highlight-box"><strong>Answer: The melting point of ice decreases by 0.0074°C per atm increase in pressure.</strong><br>This explains why ice melts under a skate blade (increased pressure) and why glaciers slide.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">16</span><span class="q-text">At what pressure will water boil at 99°C? (Latent heat of vaporisation = 537 Cal/g)</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>We use the <strong>Clausius-Clapeyron equation</strong> for liquid-gas equilibrium:</p>
+        <div class="formula-box">
+ln(P₂/P₁) = (ΔHvap/R) × (1/T₁ – 1/T₂)
+
+Known:
+T₁ = 100°C = 373 K, P₁ = 1 atm = 760 mm Hg
+T₂ = 99°C  = 372 K
+ΔHvap = 537 Cal/g × 18 g/mol = 9666 Cal/mol = 9666 × 4.184 J = 40,445 J/mol
+R = 8.314 J/mol·K
+
+ln(P₂/760) = (40445/8.314) × (1/373 – 1/372)
+           = 4865 × (372 – 373)/(373 × 372)
+           = 4865 × (–1)/(138756)
+           = –4865/138756
+           = –0.03507
+
+P₂/760 = e^(–0.03507) = 0.9656
+P₂ = 760 × 0.9656 = 733.9 mm Hg ≈ 734 mm Hg
+        </div>
+        <div class="highlight-box"><strong>Answer: Water boils at 99°C when pressure is approximately 734 mm Hg.</strong> (Slightly below 1 atm, consistent with higher altitudes where water boils below 100°C.)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">17</span><span class="q-text">At what temperature will water boil if atmospheric pressure is 740 mm? (L = 537 Cal/g)</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Using Clausius-Clapeyron:
+ln(P₂/P₁) = (ΔHvap/R) × (1/T₁ – 1/T₂)
+
+P₁ = 760 mm Hg, T₁ = 373 K
+P₂ = 740 mm Hg, T₂ = ?
+ΔHvap = 537 × 18 × 4.184 = 40,445 J/mol
+R = 8.314 J/mol·K
+
+ln(740/760) = (40445/8.314) × (1/373 – 1/T₂)
+ln(0.9737) = 4865 × (1/373 – 1/T₂)
+–0.02666 = 4865 × (1/373 – 1/T₂)
+1/373 – 1/T₂ = –0.02666/4865 = –5.48×10⁻⁶
+1/T₂ = 1/373 + 5.48×10⁻⁶
+      = 0.002681 + 0.00000548
+      = 0.002686
+T₂ = 1/0.002686 = 372.3 K = 99.3°C
+
+Water boils at approximately 99.3°C at 740 mm Hg.
+        </div>
+        <div class="highlight-box"><strong>Answer: Water boils at approximately 99.3°C at 740 mm Hg pressure.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">18</span><span class="q-text">VP of water at 90°C is 530 mm. Average L(vap) = 540 Cal/g in 90–100°C. Calculate VP at 100°C.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+P₁ = 530 mm Hg, T₁ = 90°C = 363 K
+T₂ = 100°C = 373 K, P₂ = ?
+ΔHvap = 540 × 18 × 4.184 = 40,619 J/mol ≈ 40,620 J/mol
+R = 8.314 J/mol·K
+
+log(P₂/P₁) = (ΔHvap/2.303R) × (1/T₁ – 1/T₂)
+           = (40620/19.15) × (1/363 – 1/373)
+           = 2121.9 × (373 – 363)/(363 × 373)
+           = 2121.9 × 10/(135399)
+           = 2121.9 × 7.386×10⁻⁵
+           = 0.15672
+
+P₂/530 = 10^(0.15672) = 1.434
+P₂ = 530 × 1.434 = 760 mm Hg
+        </div>
+        <div class="highlight-box"><strong>Answer: Vapour pressure of water at 100°C = 760 mm Hg.</strong> This beautifully confirms that water boils at 100°C at 1 atm (760 mm Hg) — a perfect self-check!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">19</span><span class="q-text">VP of water = 1.018 at 373.6 K and 0.982 at 372.6 K. Calculate enthalpy of vaporisation.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+Given:
+P₁ = 0.982 atm, T₁ = 372.6 K
+P₂ = 1.018 atm, T₂ = 373.6 K
+
+Using Clausius-Clapeyron:
+log(P₂/P₁) = (ΔHvap/2.303R) × (1/T₁ – 1/T₂)
+
+log(1.018/0.982) = (ΔHvap/2.303 × 8.314) × (1/372.6 – 1/373.6)
+
+log(1.0367) = (ΔHvap/19.14) × (373.6 – 372.6)/(372.6 × 373.6)
+0.01564 = (ΔHvap/19.14) × 1/(139,155.36)
+0.01564 = (ΔHvap/19.14) × 7.187×10⁻⁶
+ΔHvap = 0.01564 × 19.14 / 7.187×10⁻⁶
+       = 0.2995 / 7.187×10⁻⁶
+       = 41,675 J/mol
+       ≈ 41.7 kJ/mol
+        </div>
+        <div class="highlight-box"><strong>Answer: ΔH(vap) ≈ 41.7 kJ/mol</strong> (Literature value: 40.7 kJ/mol at 100°C — very close!)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">20</span><span class="q-text">A liquid boils at 310 K at normal pressure. At what pressure will it boil at 280 K? ΔHvap = 27 kJ/mol.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <div class="formula-box">
+T₁ = 310 K, P₁ = 1 atm, T₂ = 280 K, P₂ = ?
+ΔHvap = 27 kJ/mol = 27000 J/mol
+R = 8.314 J/mol·K
+
+log(P₂/P₁) = (ΔHvap/2.303R) × (1/T₁ – 1/T₂)
+           = (27000/2.303 × 8.314) × (1/310 – 1/280)
+           = (27000/19.14) × (280 – 310)/(310 × 280)
+           = 1411 × (–30)/(86800)
+           = 1411 × (–3.456×10⁻⁴)
+           = –0.4878
+
+P₂/1 = 10^(–0.4878) = 0.3249
+P₂ ≈ 0.325 atm
+        </div>
+        <div class="highlight-box"><strong>Answer: The liquid will boil at 280 K when the pressure is approximately 0.325 atm.</strong> (Lower temperature requires lower pressure for boiling — consistent with Clausius-Clapeyron.)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">21</span><span class="q-text">Why does ice melt on heating but solid CO₂ converts directly to gas?</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p>The answer lies in the <strong>triple point pressure</strong> of each substance:</p>
+        <table class="info-table">
+          <thead><tr><th>Property</th><th>Water (H₂O)</th><th>Carbon dioxide (CO₂)</th></tr></thead>
+          <tbody>
+            <tr><td>Triple point pressure</td><td><strong>4.58 mm Hg</strong> (0.006 atm) — BELOW 1 atm</td><td><strong>3880 mm Hg</strong> (5.11 atm) — ABOVE 1 atm</td></tr>
+            <tr><td>At 1 atm, what happens on heating?</td><td>Solid (ice) → Liquid (water) → Gas (steam) — normal melting then boiling</td><td>Solid CO₂ → directly Gas — sublimation (no liquid phase at 1 atm)</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box">
+          <strong>Explanation:</strong><br>
+          • For <strong>water</strong>: At 1 atm, we are <em>above</em> the triple point pressure (4.58 mm). So, as we heat ice, we cross the fusion curve (solid→liquid) before reaching the vaporisation curve. Ice <em>melts first</em>, then the liquid water eventually boils.<br><br>
+          • For <strong>CO₂</strong>: At 1 atm, we are <em>below</em> the triple point pressure (5.11 atm). At this low pressure, there is no stable liquid phase. So, heating solid CO₂ at 1 atm takes it directly from solid to gas — it <em>sublimes</em> without passing through the liquid phase.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggle(this)">
+    <div class="qa-question"><span class="q-num">22</span><span class="q-text">Calculate P, C and F for the given equilibrium systems.</span><span class="q-arrow">▼</span></div>
+    <div class="qa-answer">
+      <span class="ans-label">Answer</span>
+      <div class="ans-body">
+        <p><strong>Formula: C = S – R – R' where S = species, R = equilibrium relations, R' = extra conditions; F = C – P + 2</strong></p>
+        <table class="info-table">
+          <thead><tr><th>System</th><th>P (phases)</th><th>S (species)</th><th>R (reactions)</th><th>R' (extra)</th><th>C = S–R–R'</th><th>F = C–P+2</th></tr></thead>
+          <tbody>
+            <tr><td>(i) NH₄Cl(s) ⇌ NH₃(g) + HCl(g), PNH₃ = PHCl</td><td>2</td><td>3</td><td>1</td><td>1 (equal pressures)</td><td>1</td><td>1</td></tr>
+            <tr><td>(ii) NH₄Cl(s) ⇌ NH₃(g) + HCl(g), PNH₃ ≠ PHCl</td><td>2</td><td>3</td><td>1</td><td>0</td><td>2</td><td>2</td></tr>
+            <tr><td>(iii) I₂(s) ⇌ I₂(aq)</td><td>2</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>(iv) CaCO₃(s) ⇌ CaO(s) + CO₂(g)</td><td>3</td><td>3</td><td>1</td><td>0</td><td>2</td><td>1</td></tr>
+            <tr><td>(v) N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</td><td>1</td><td>3</td><td>1</td><td>0</td><td>2</td><td>3</td></tr>
+            <tr><td>(vi) 3Fe(s)+4H₂O(g) ⇌ Fe₃O₄(s)+4H₂(g)</td><td>3</td><td>4</td><td>1</td><td>0</td><td>3</td><td>2</td></tr>
+            <tr><td>(vii) CH₄(g)+2O₂(g)→CO₂(g)+2H₂O(l)</td><td>2</td><td>4</td><td>1</td><td>0</td><td>3</td><td>3</td></tr>
+            <tr><td>(viii) PCl₅(g) ⇌ PCl₃(g)+Cl₂(g)</td><td>1</td><td>3</td><td>1</td><td>0</td><td>2</td><td>3</td></tr>
+            <tr><td>(ix) Water at freezing point</td><td>2</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>(x) Water at boiling point</td><td>2</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>(xi) Aqueous H₂SO₄ solution</td><td>1</td><td>2</td><td>0</td><td>0</td><td>2</td><td>3</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box"><strong>Key notes:</strong><br>
+          (i) When partial pressures are equal (PNH₃ = PHCl), this is an extra constraint → C reduces by 1.<br>
+          (ii) When PNH₃ ≠ PHCl, external HCl or NH₃ is added → no extra constraint → C = 2.<br>
+          (iv) CaCO₃ system: 3 species, 1 reaction → C = 2 (any 2 of 3 species define the system).
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>IDM Module 6 · Chemistry Q&amp;A Reference Sheet · All questions answered in simple, detailed English.</p>
+</footer>
+
+<script>
+  // Toggle accordion
+  function toggle(card) {
+    const wasOpen = card.classList.contains('open');
+    // Close all in same section
+    const section = card.closest('.section');
+    section.querySelectorAll('.qa-card.open').forEach(c => c.classList.remove('open'));
+    if (!wasOpen) card.classList.add('open');
+  }
+
+  // Section navigation
+  function showSection(id, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    const sections = ['s1','s2','s3','s4','s5'];
+    const current = sections.findIndex(id => document.getElementById(id).classList.contains('active'));
+    if (e.key === 'ArrowRight' && current < 4) {
+      const next = current + 1;
+      showSection(sections[next], document.getElementById('btn-' + sections[next]));
+    }
+    if (e.key === 'ArrowLeft' && current > 0) {
+      const prev = current - 1;
+      showSection(sections[prev], document.getElementById('btn-' + sections[prev]));
+    }
+  });
+</script>
+</body>
+</html>
